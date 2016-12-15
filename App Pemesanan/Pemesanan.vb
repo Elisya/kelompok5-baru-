@@ -44,8 +44,7 @@
     End Sub
 
     Private Sub keluarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles keluarButton.Click
-        Me.Hide()
-        formPemesanan.Close()
+
 
     End Sub
 End Class
