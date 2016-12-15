@@ -13,9 +13,10 @@
     End Sub
 
     Private Sub simpanButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles simpanButton.Click
+
         Me.Validate()
-        Me.MenuBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.Kel_5_si_restoDataSet)
+        MenuBindingSource.EndEdit()
+        MenuTableAdapter.Update(Kel_5_si_restoDataSet.menu)
     End Sub
 
     Private Sub keluarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles keluarButton.Click

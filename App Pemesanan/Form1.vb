@@ -1,7 +1,7 @@
 ﻿Public Class Form1
 
     Private Sub menuButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuButton.Click
-        formmenu.Show()
+        formLihatMenu.Show()
     End Sub
 
     Private Sub pemesananButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pemesananButton.Click
