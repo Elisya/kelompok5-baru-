@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        MessageBox.Show(" Fruit Juice (Rp.10.000,-)", "Menu")
+        MessageBox.Show(" Fruity Juice (Rp.10.000,-)", "Menu")
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
@@ -110,6 +110,6 @@
     End Sub
 
     Private Sub Button26_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button26.Click
-        MessageBox.Show("Pudding Fruit (Rp.25.000,-)", "Menu")
+        MessageBox.Show("Fruity  Pudding (Rp.25.000,-)", "Menu")
     End Sub
 End Class

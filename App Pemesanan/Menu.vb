@@ -13,12 +13,11 @@
     End Sub
 
     Private Sub simpanButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles simpanButton.Click
-        On Error GoTo SaveErr
 
         Me.Validate()
         MenuBindingSource.EndEdit()
         MenuTableAdapter.Update(Kel_5_si_restoDataSet.menu)
-SaveErr:
+
         Exit Sub
     End Sub
 
