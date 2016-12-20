@@ -403,6 +403,7 @@ Partial Class formLihatMenu
         Me.ClientSize = New System.Drawing.Size(1297, 700)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formLihatMenu"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Lihat_Menu"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
