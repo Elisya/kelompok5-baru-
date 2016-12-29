@@ -31,10 +31,20 @@ Partial Class formPemesanan
         Dim Kasir_Id_MejaLabel As System.Windows.Forms.Label
         Dim Pelayan_Id_PelayanLabel As System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Kel_5_si_restoDataSet = New App_Pemesanan.kel_5_si_restoDataSet()
+        Me.keluarButton = New System.Windows.Forms.Button()
+        Me.batalButton = New System.Windows.Forms.Button()
+        Me.simpanButton = New System.Windows.Forms.Button()
+        Me.hapusButton = New System.Windows.Forms.Button()
+        Me.tambahButton = New System.Windows.Forms.Button()
+        Me.Id_MejaTextBox = New System.Windows.Forms.TextBox()
         Me.PemesananBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PemesananTableAdapter = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.pemesananTableAdapter()
-        Me.TableAdapterManager = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager()
+        Me.Kel_5_si_restoDataSet = New App_Pemesanan.kel_5_si_restoDataSet()
+        Me.Nama_MakananTextBox = New System.Windows.Forms.TextBox()
+        Me.Jumlah_PesananTextBox = New System.Windows.Forms.TextBox()
+        Me.Menu_TambahanTextBox = New System.Windows.Forms.TextBox()
+        Me.Menu_Id_MakananTextBox = New System.Windows.Forms.TextBox()
+        Me.Kasir_Id_MejaTextBox = New System.Windows.Forms.TextBox()
+        Me.Pelayan_Id_PelayanTextBox = New System.Windows.Forms.TextBox()
         Me.PemesananDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,18 +53,8 @@ Partial Class formPemesanan
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Id_MejaTextBox = New System.Windows.Forms.TextBox()
-        Me.Nama_MakananTextBox = New System.Windows.Forms.TextBox()
-        Me.Jumlah_PesananTextBox = New System.Windows.Forms.TextBox()
-        Me.Menu_TambahanTextBox = New System.Windows.Forms.TextBox()
-        Me.Menu_Id_MakananTextBox = New System.Windows.Forms.TextBox()
-        Me.Kasir_Id_MejaTextBox = New System.Windows.Forms.TextBox()
-        Me.Pelayan_Id_PelayanTextBox = New System.Windows.Forms.TextBox()
-        Me.tambahButton = New System.Windows.Forms.Button()
-        Me.hapusButton = New System.Windows.Forms.Button()
-        Me.simpanButton = New System.Windows.Forms.Button()
-        Me.batalButton = New System.Windows.Forms.Button()
-        Me.keluarButton = New System.Windows.Forms.Button()
+        Me.PemesananTableAdapter = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.pemesananTableAdapter()
+        Me.TableAdapterManager = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager()
         Id_MejaLabel = New System.Windows.Forms.Label()
         Nama_MakananLabel = New System.Windows.Forms.Label()
         Jumlah_PesananLabel = New System.Windows.Forms.Label()
@@ -63,13 +63,77 @@ Partial Class formPemesanan
         Kasir_Id_MejaLabel = New System.Windows.Forms.Label()
         Pelayan_Id_PelayanLabel = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.Kel_5_si_restoDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PemesananBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Kel_5_si_restoDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PemesananDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'Id_MejaLabel
+        '
+        Id_MejaLabel.AutoSize = True
+        Id_MejaLabel.Location = New System.Drawing.Point(6, 19)
+        Id_MejaLabel.Name = "Id_MejaLabel"
+        Id_MejaLabel.Size = New System.Drawing.Size(45, 13)
+        Id_MejaLabel.TabIndex = 1
+        Id_MejaLabel.Text = "Id Meja:"
+        '
+        'Nama_MakananLabel
+        '
+        Nama_MakananLabel.AutoSize = True
+        Nama_MakananLabel.Location = New System.Drawing.Point(6, 45)
+        Nama_MakananLabel.Name = "Nama_MakananLabel"
+        Nama_MakananLabel.Size = New System.Drawing.Size(86, 13)
+        Nama_MakananLabel.TabIndex = 3
+        Nama_MakananLabel.Text = "Nama Makanan:"
+        '
+        'Jumlah_PesananLabel
+        '
+        Jumlah_PesananLabel.AutoSize = True
+        Jumlah_PesananLabel.Location = New System.Drawing.Point(6, 71)
+        Jumlah_PesananLabel.Name = "Jumlah_PesananLabel"
+        Jumlah_PesananLabel.Size = New System.Drawing.Size(88, 13)
+        Jumlah_PesananLabel.TabIndex = 5
+        Jumlah_PesananLabel.Text = "Jumlah Pesanan:"
+        '
+        'Menu_TambahanLabel
+        '
+        Menu_TambahanLabel.AutoSize = True
+        Menu_TambahanLabel.Location = New System.Drawing.Point(6, 97)
+        Menu_TambahanLabel.Name = "Menu_TambahanLabel"
+        Menu_TambahanLabel.Size = New System.Drawing.Size(91, 13)
+        Menu_TambahanLabel.TabIndex = 7
+        Menu_TambahanLabel.Text = "Menu Tambahan:"
+        '
+        'Menu_Id_MakananLabel
+        '
+        Menu_Id_MakananLabel.AutoSize = True
+        Menu_Id_MakananLabel.Location = New System.Drawing.Point(6, 123)
+        Menu_Id_MakananLabel.Name = "Menu_Id_MakananLabel"
+        Menu_Id_MakananLabel.Size = New System.Drawing.Size(97, 13)
+        Menu_Id_MakananLabel.TabIndex = 9
+        Menu_Id_MakananLabel.Text = "Menu Id Makanan:"
+        '
+        'Kasir_Id_MejaLabel
+        '
+        Kasir_Id_MejaLabel.AutoSize = True
+        Kasir_Id_MejaLabel.Location = New System.Drawing.Point(6, 149)
+        Kasir_Id_MejaLabel.Name = "Kasir_Id_MejaLabel"
+        Kasir_Id_MejaLabel.Size = New System.Drawing.Size(71, 13)
+        Kasir_Id_MejaLabel.TabIndex = 11
+        Kasir_Id_MejaLabel.Text = "Kasir Id Meja:"
+        '
+        'Pelayan_Id_PelayanLabel
+        '
+        Pelayan_Id_PelayanLabel.AutoSize = True
+        Pelayan_Id_PelayanLabel.Location = New System.Drawing.Point(6, 175)
+        Pelayan_Id_PelayanLabel.Name = "Pelayan_Id_PelayanLabel"
+        Pelayan_Id_PelayanLabel.Size = New System.Drawing.Size(101, 13)
+        Pelayan_Id_PelayanLabel.TabIndex = 13
+        Pelayan_Id_PelayanLabel.Text = "Pelayan Id Pelayan:"
+        '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Aquamarine
         Me.GroupBox1.Controls.Add(Me.keluarButton)
         Me.GroupBox1.Controls.Add(Me.batalButton)
         Me.GroupBox1.Controls.Add(Me.simpanButton)
@@ -97,29 +161,116 @@ Partial Class formPemesanan
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pemesanan"
         '
-        'Kel_5_si_restoDataSet
+        'keluarButton
         '
-        Me.Kel_5_si_restoDataSet.DataSetName = "kel_5_si_restoDataSet"
-        Me.Kel_5_si_restoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.keluarButton.Location = New System.Drawing.Point(150, 260)
+        Me.keluarButton.Name = "keluarButton"
+        Me.keluarButton.Size = New System.Drawing.Size(75, 23)
+        Me.keluarButton.TabIndex = 19
+        Me.keluarButton.Text = "Keluar"
+        Me.keluarButton.UseVisualStyleBackColor = True
+        '
+        'batalButton
+        '
+        Me.batalButton.Location = New System.Drawing.Point(47, 260)
+        Me.batalButton.Name = "batalButton"
+        Me.batalButton.Size = New System.Drawing.Size(75, 23)
+        Me.batalButton.TabIndex = 18
+        Me.batalButton.Text = "Batal"
+        Me.batalButton.UseVisualStyleBackColor = True
+        '
+        'simpanButton
+        '
+        Me.simpanButton.Location = New System.Drawing.Point(189, 231)
+        Me.simpanButton.Name = "simpanButton"
+        Me.simpanButton.Size = New System.Drawing.Size(75, 23)
+        Me.simpanButton.TabIndex = 17
+        Me.simpanButton.Text = "Simpan"
+        Me.simpanButton.UseVisualStyleBackColor = True
+        '
+        'hapusButton
+        '
+        Me.hapusButton.Location = New System.Drawing.Point(96, 231)
+        Me.hapusButton.Name = "hapusButton"
+        Me.hapusButton.Size = New System.Drawing.Size(75, 23)
+        Me.hapusButton.TabIndex = 16
+        Me.hapusButton.Text = "Hapus"
+        Me.hapusButton.UseVisualStyleBackColor = True
+        '
+        'tambahButton
+        '
+        Me.tambahButton.Location = New System.Drawing.Point(6, 231)
+        Me.tambahButton.Name = "tambahButton"
+        Me.tambahButton.Size = New System.Drawing.Size(75, 23)
+        Me.tambahButton.TabIndex = 15
+        Me.tambahButton.Text = "Tambah"
+        Me.tambahButton.UseVisualStyleBackColor = True
+        '
+        'Id_MejaTextBox
+        '
+        Me.Id_MejaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Id Meja", True))
+        Me.Id_MejaTextBox.Location = New System.Drawing.Point(113, 16)
+        Me.Id_MejaTextBox.Name = "Id_MejaTextBox"
+        Me.Id_MejaTextBox.Size = New System.Drawing.Size(58, 20)
+        Me.Id_MejaTextBox.TabIndex = 2
         '
         'PemesananBindingSource
         '
         Me.PemesananBindingSource.DataMember = "pemesanan"
         Me.PemesananBindingSource.DataSource = Me.Kel_5_si_restoDataSet
         '
-        'PemesananTableAdapter
+        'Kel_5_si_restoDataSet
         '
-        Me.PemesananTableAdapter.ClearBeforeFill = True
+        Me.Kel_5_si_restoDataSet.DataSetName = "kel_5_si_restoDataSet"
+        Me.Kel_5_si_restoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TableAdapterManager
+        'Nama_MakananTextBox
         '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.kasirTableAdapter = Nothing
-        Me.TableAdapterManager.menuTableAdapter = Nothing
-        Me.TableAdapterManager.pelayan_has_pemesananTableAdapter = Nothing
-        Me.TableAdapterManager.pelayanTableAdapter = Nothing
-        Me.TableAdapterManager.pemesananTableAdapter = Me.PemesananTableAdapter
-        Me.TableAdapterManager.UpdateOrder = App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.Nama_MakananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Nama Makanan", True))
+        Me.Nama_MakananTextBox.Location = New System.Drawing.Point(113, 42)
+        Me.Nama_MakananTextBox.Name = "Nama_MakananTextBox"
+        Me.Nama_MakananTextBox.Size = New System.Drawing.Size(171, 20)
+        Me.Nama_MakananTextBox.TabIndex = 4
+        '
+        'Jumlah_PesananTextBox
+        '
+        Me.Jumlah_PesananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Jumlah Pesanan", True))
+        Me.Jumlah_PesananTextBox.Location = New System.Drawing.Point(113, 68)
+        Me.Jumlah_PesananTextBox.Name = "Jumlah_PesananTextBox"
+        Me.Jumlah_PesananTextBox.Size = New System.Drawing.Size(58, 20)
+        Me.Jumlah_PesananTextBox.TabIndex = 6
+        '
+        'Menu_TambahanTextBox
+        '
+        Me.Menu_TambahanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Menu Tambahan", True))
+        Me.Menu_TambahanTextBox.Location = New System.Drawing.Point(113, 94)
+        Me.Menu_TambahanTextBox.Name = "Menu_TambahanTextBox"
+        Me.Menu_TambahanTextBox.Size = New System.Drawing.Size(171, 20)
+        Me.Menu_TambahanTextBox.TabIndex = 8
+        '
+        'Menu_Id_MakananTextBox
+        '
+        Me.Menu_Id_MakananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Menu_Id Makanan", True))
+        Me.Menu_Id_MakananTextBox.Location = New System.Drawing.Point(113, 120)
+        Me.Menu_Id_MakananTextBox.Name = "Menu_Id_MakananTextBox"
+        Me.Menu_Id_MakananTextBox.Size = New System.Drawing.Size(58, 20)
+        Me.Menu_Id_MakananTextBox.TabIndex = 10
+        '
+        'Kasir_Id_MejaTextBox
+        '
+        Me.Kasir_Id_MejaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Kasir_Id Meja", True))
+        Me.Kasir_Id_MejaTextBox.Location = New System.Drawing.Point(113, 146)
+        Me.Kasir_Id_MejaTextBox.Name = "Kasir_Id_MejaTextBox"
+        Me.Kasir_Id_MejaTextBox.Size = New System.Drawing.Size(58, 20)
+        Me.Kasir_Id_MejaTextBox.TabIndex = 12
+        '
+        'Pelayan_Id_PelayanTextBox
+        '
+        Me.Pelayan_Id_PelayanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Pelayan_Id Pelayan", True))
+        Me.Pelayan_Id_PelayanTextBox.Location = New System.Drawing.Point(113, 172)
+        Me.Pelayan_Id_PelayanTextBox.Name = "Pelayan_Id_PelayanTextBox"
+        Me.Pelayan_Id_PelayanTextBox.Size = New System.Drawing.Size(58, 20)
+        Me.Pelayan_Id_PelayanTextBox.TabIndex = 14
         '
         'PemesananDataGridView
         '
@@ -174,169 +325,19 @@ Partial Class formPemesanan
         Me.DataGridViewTextBoxColumn7.HeaderText = "Pelayan_Id Pelayan"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         '
-        'Id_MejaLabel
+        'PemesananTableAdapter
         '
-        Id_MejaLabel.AutoSize = True
-        Id_MejaLabel.Location = New System.Drawing.Point(6, 19)
-        Id_MejaLabel.Name = "Id_MejaLabel"
-        Id_MejaLabel.Size = New System.Drawing.Size(45, 13)
-        Id_MejaLabel.TabIndex = 1
-        Id_MejaLabel.Text = "Id Meja:"
+        Me.PemesananTableAdapter.ClearBeforeFill = True
         '
-        'Id_MejaTextBox
+        'TableAdapterManager
         '
-        Me.Id_MejaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Id Meja", True))
-        Me.Id_MejaTextBox.Location = New System.Drawing.Point(113, 16)
-        Me.Id_MejaTextBox.Name = "Id_MejaTextBox"
-        Me.Id_MejaTextBox.Size = New System.Drawing.Size(58, 20)
-        Me.Id_MejaTextBox.TabIndex = 2
-        '
-        'Nama_MakananLabel
-        '
-        Nama_MakananLabel.AutoSize = True
-        Nama_MakananLabel.Location = New System.Drawing.Point(6, 45)
-        Nama_MakananLabel.Name = "Nama_MakananLabel"
-        Nama_MakananLabel.Size = New System.Drawing.Size(86, 13)
-        Nama_MakananLabel.TabIndex = 3
-        Nama_MakananLabel.Text = "Nama Makanan:"
-        '
-        'Nama_MakananTextBox
-        '
-        Me.Nama_MakananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Nama Makanan", True))
-        Me.Nama_MakananTextBox.Location = New System.Drawing.Point(113, 42)
-        Me.Nama_MakananTextBox.Name = "Nama_MakananTextBox"
-        Me.Nama_MakananTextBox.Size = New System.Drawing.Size(171, 20)
-        Me.Nama_MakananTextBox.TabIndex = 4
-        '
-        'Jumlah_PesananLabel
-        '
-        Jumlah_PesananLabel.AutoSize = True
-        Jumlah_PesananLabel.Location = New System.Drawing.Point(6, 71)
-        Jumlah_PesananLabel.Name = "Jumlah_PesananLabel"
-        Jumlah_PesananLabel.Size = New System.Drawing.Size(88, 13)
-        Jumlah_PesananLabel.TabIndex = 5
-        Jumlah_PesananLabel.Text = "Jumlah Pesanan:"
-        '
-        'Jumlah_PesananTextBox
-        '
-        Me.Jumlah_PesananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Jumlah Pesanan", True))
-        Me.Jumlah_PesananTextBox.Location = New System.Drawing.Point(113, 68)
-        Me.Jumlah_PesananTextBox.Name = "Jumlah_PesananTextBox"
-        Me.Jumlah_PesananTextBox.Size = New System.Drawing.Size(58, 20)
-        Me.Jumlah_PesananTextBox.TabIndex = 6
-        '
-        'Menu_TambahanLabel
-        '
-        Menu_TambahanLabel.AutoSize = True
-        Menu_TambahanLabel.Location = New System.Drawing.Point(6, 97)
-        Menu_TambahanLabel.Name = "Menu_TambahanLabel"
-        Menu_TambahanLabel.Size = New System.Drawing.Size(91, 13)
-        Menu_TambahanLabel.TabIndex = 7
-        Menu_TambahanLabel.Text = "Menu Tambahan:"
-        '
-        'Menu_TambahanTextBox
-        '
-        Me.Menu_TambahanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Menu Tambahan", True))
-        Me.Menu_TambahanTextBox.Location = New System.Drawing.Point(113, 94)
-        Me.Menu_TambahanTextBox.Name = "Menu_TambahanTextBox"
-        Me.Menu_TambahanTextBox.Size = New System.Drawing.Size(171, 20)
-        Me.Menu_TambahanTextBox.TabIndex = 8
-        '
-        'Menu_Id_MakananLabel
-        '
-        Menu_Id_MakananLabel.AutoSize = True
-        Menu_Id_MakananLabel.Location = New System.Drawing.Point(6, 123)
-        Menu_Id_MakananLabel.Name = "Menu_Id_MakananLabel"
-        Menu_Id_MakananLabel.Size = New System.Drawing.Size(97, 13)
-        Menu_Id_MakananLabel.TabIndex = 9
-        Menu_Id_MakananLabel.Text = "Menu Id Makanan:"
-        '
-        'Menu_Id_MakananTextBox
-        '
-        Me.Menu_Id_MakananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Menu_Id Makanan", True))
-        Me.Menu_Id_MakananTextBox.Location = New System.Drawing.Point(113, 120)
-        Me.Menu_Id_MakananTextBox.Name = "Menu_Id_MakananTextBox"
-        Me.Menu_Id_MakananTextBox.Size = New System.Drawing.Size(58, 20)
-        Me.Menu_Id_MakananTextBox.TabIndex = 10
-        '
-        'Kasir_Id_MejaLabel
-        '
-        Kasir_Id_MejaLabel.AutoSize = True
-        Kasir_Id_MejaLabel.Location = New System.Drawing.Point(6, 149)
-        Kasir_Id_MejaLabel.Name = "Kasir_Id_MejaLabel"
-        Kasir_Id_MejaLabel.Size = New System.Drawing.Size(71, 13)
-        Kasir_Id_MejaLabel.TabIndex = 11
-        Kasir_Id_MejaLabel.Text = "Kasir Id Meja:"
-        '
-        'Kasir_Id_MejaTextBox
-        '
-        Me.Kasir_Id_MejaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Kasir_Id Meja", True))
-        Me.Kasir_Id_MejaTextBox.Location = New System.Drawing.Point(113, 146)
-        Me.Kasir_Id_MejaTextBox.Name = "Kasir_Id_MejaTextBox"
-        Me.Kasir_Id_MejaTextBox.Size = New System.Drawing.Size(58, 20)
-        Me.Kasir_Id_MejaTextBox.TabIndex = 12
-        '
-        'Pelayan_Id_PelayanLabel
-        '
-        Pelayan_Id_PelayanLabel.AutoSize = True
-        Pelayan_Id_PelayanLabel.Location = New System.Drawing.Point(6, 175)
-        Pelayan_Id_PelayanLabel.Name = "Pelayan_Id_PelayanLabel"
-        Pelayan_Id_PelayanLabel.Size = New System.Drawing.Size(101, 13)
-        Pelayan_Id_PelayanLabel.TabIndex = 13
-        Pelayan_Id_PelayanLabel.Text = "Pelayan Id Pelayan:"
-        '
-        'Pelayan_Id_PelayanTextBox
-        '
-        Me.Pelayan_Id_PelayanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource, "Pelayan_Id Pelayan", True))
-        Me.Pelayan_Id_PelayanTextBox.Location = New System.Drawing.Point(113, 172)
-        Me.Pelayan_Id_PelayanTextBox.Name = "Pelayan_Id_PelayanTextBox"
-        Me.Pelayan_Id_PelayanTextBox.Size = New System.Drawing.Size(58, 20)
-        Me.Pelayan_Id_PelayanTextBox.TabIndex = 14
-        '
-        'tambahButton
-        '
-        Me.tambahButton.Location = New System.Drawing.Point(6, 231)
-        Me.tambahButton.Name = "tambahButton"
-        Me.tambahButton.Size = New System.Drawing.Size(75, 23)
-        Me.tambahButton.TabIndex = 15
-        Me.tambahButton.Text = "Tambah"
-        Me.tambahButton.UseVisualStyleBackColor = True
-        '
-        'hapusButton
-        '
-        Me.hapusButton.Location = New System.Drawing.Point(96, 231)
-        Me.hapusButton.Name = "hapusButton"
-        Me.hapusButton.Size = New System.Drawing.Size(75, 23)
-        Me.hapusButton.TabIndex = 16
-        Me.hapusButton.Text = "Hapus"
-        Me.hapusButton.UseVisualStyleBackColor = True
-        '
-        'simpanButton
-        '
-        Me.simpanButton.Location = New System.Drawing.Point(189, 231)
-        Me.simpanButton.Name = "simpanButton"
-        Me.simpanButton.Size = New System.Drawing.Size(75, 23)
-        Me.simpanButton.TabIndex = 17
-        Me.simpanButton.Text = "Simpan"
-        Me.simpanButton.UseVisualStyleBackColor = True
-        '
-        'batalButton
-        '
-        Me.batalButton.Location = New System.Drawing.Point(47, 260)
-        Me.batalButton.Name = "batalButton"
-        Me.batalButton.Size = New System.Drawing.Size(75, 23)
-        Me.batalButton.TabIndex = 18
-        Me.batalButton.Text = "Batal"
-        Me.batalButton.UseVisualStyleBackColor = True
-        '
-        'keluarButton
-        '
-        Me.keluarButton.Location = New System.Drawing.Point(150, 260)
-        Me.keluarButton.Name = "keluarButton"
-        Me.keluarButton.Size = New System.Drawing.Size(75, 23)
-        Me.keluarButton.TabIndex = 19
-        Me.keluarButton.Text = "Keluar"
-        Me.keluarButton.UseVisualStyleBackColor = True
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.kasirTableAdapter = Nothing
+        Me.TableAdapterManager.menuTableAdapter = Nothing
+        Me.TableAdapterManager.pelayan_has_pemesananTableAdapter = Nothing
+        Me.TableAdapterManager.pelayanTableAdapter = Nothing
+        Me.TableAdapterManager.pemesananTableAdapter = Me.PemesananTableAdapter
+        Me.TableAdapterManager.UpdateOrder = App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'formPemesanan
         '
@@ -348,8 +349,8 @@ Partial Class formPemesanan
         Me.Text = "Pemesanan"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.Kel_5_si_restoDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PemesananBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Kel_5_si_restoDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PemesananDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
