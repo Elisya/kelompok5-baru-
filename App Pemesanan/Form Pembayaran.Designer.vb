@@ -44,28 +44,28 @@ Partial Class Form_Pembayaran
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.kelapa = New System.Windows.Forms.Label()
-        Me.campur = New System.Windows.Forms.Label()
-        Me.teh = New System.Windows.Forms.Label()
-        Me.aqua = New System.Windows.Forms.Label()
+        Me.cendol = New System.Windows.Forms.Label()
+        Me.sopbuah = New System.Windows.Forms.Label()
+        Me.jus = New System.Windows.Forms.Label()
+        Me.tehes = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.pecelayam = New System.Windows.Forms.Label()
-        Me.sotoayam = New System.Windows.Forms.Label()
-        Me.bakso = New System.Windows.Forms.Label()
-        Me.soto = New System.Windows.Forms.Label()
+        Me.sambal = New System.Windows.Forms.Label()
+        Me.panggang = New System.Windows.Forms.Label()
+        Me.pasta = New System.Windows.Forms.Label()
+        Me.udang = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.menu5 = New System.Windows.Forms.TextBox()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.esbuah = New System.Windows.Forms.Label()
         Me.menu6 = New System.Windows.Forms.TextBox()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.kopi = New System.Windows.Forms.Label()
         Me.menu12 = New System.Windows.Forms.TextBox()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.bakpao = New System.Windows.Forms.Label()
         Me.menu11 = New System.Windows.Forms.TextBox()
         Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.burger = New System.Windows.Forms.Label()
         Me.menu10 = New System.Windows.Forms.TextBox()
         Me.menu9 = New System.Windows.Forms.TextBox()
         Me.menu8 = New System.Windows.Forms.TextBox()
@@ -76,28 +76,28 @@ Partial Class Form_Pembayaran
         Me.TextBox24 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.ubi = New System.Windows.Forms.Label()
+        Me.takoyaki = New System.Windows.Forms.Label()
+        Me.amagos = New System.Windows.Forms.Label()
+        Me.tofu = New System.Windows.Forms.Label()
         Me.menu14 = New System.Windows.Forms.TextBox()
         Me.TextBox26 = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.pudding = New System.Windows.Forms.Label()
         Me.menu13 = New System.Windows.Forms.TextBox()
         Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.almond = New System.Windows.Forms.Label()
         Me.menu20 = New System.Windows.Forms.TextBox()
         Me.menu19 = New System.Windows.Forms.TextBox()
         Me.TextBox31 = New System.Windows.Forms.TextBox()
         Me.TextBox32 = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
+        Me.buntut = New System.Windows.Forms.Label()
+        Me.kepiting = New System.Windows.Forms.Label()
         Me.menu26 = New System.Windows.Forms.TextBox()
         Me.menu25 = New System.Windows.Forms.TextBox()
         Me.TextBox35 = New System.Windows.Forms.TextBox()
         Me.TextBox36 = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
+        Me.oncom = New System.Windows.Forms.Label()
+        Me.bali = New System.Windows.Forms.Label()
         Me.menu24 = New System.Windows.Forms.TextBox()
         Me.menu23 = New System.Windows.Forms.TextBox()
         Me.menu22 = New System.Windows.Forms.TextBox()
@@ -106,10 +106,10 @@ Partial Class Form_Pembayaran
         Me.TextBox42 = New System.Windows.Forms.TextBox()
         Me.TextBox43 = New System.Windows.Forms.TextBox()
         Me.TextBox44 = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
+        Me.beef = New System.Windows.Forms.Label()
+        Me.sate = New System.Windows.Forms.Label()
+        Me.salmon = New System.Windows.Forms.Label()
+        Me.rempah = New System.Windows.Forms.Label()
         Me.minum = New System.Windows.Forms.TextBox()
         Me.makan = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
@@ -269,41 +269,41 @@ Partial Class Form_Pembayaran
         Me.Label12.TabIndex = 57
         Me.Label12.Text = "QTY"
         '
-        'kelapa
+        'cendol
         '
-        Me.kelapa.AutoSize = True
-        Me.kelapa.Location = New System.Drawing.Point(30, 160)
-        Me.kelapa.Name = "kelapa"
-        Me.kelapa.Size = New System.Drawing.Size(72, 13)
-        Me.kelapa.TabIndex = 56
-        Me.kelapa.Text = "4. S Cendol B"
+        Me.cendol.AutoSize = True
+        Me.cendol.Location = New System.Drawing.Point(30, 160)
+        Me.cendol.Name = "cendol"
+        Me.cendol.Size = New System.Drawing.Size(72, 13)
+        Me.cendol.TabIndex = 56
+        Me.cendol.Text = "4. S Cendol B"
         '
-        'campur
+        'sopbuah
         '
-        Me.campur.AutoSize = True
-        Me.campur.Location = New System.Drawing.Point(30, 136)
-        Me.campur.Name = "campur"
-        Me.campur.Size = New System.Drawing.Size(66, 13)
-        Me.campur.TabIndex = 55
-        Me.campur.Text = "3. Sop Buah"
+        Me.sopbuah.AutoSize = True
+        Me.sopbuah.Location = New System.Drawing.Point(30, 136)
+        Me.sopbuah.Name = "sopbuah"
+        Me.sopbuah.Size = New System.Drawing.Size(66, 13)
+        Me.sopbuah.TabIndex = 55
+        Me.sopbuah.Text = "3. Sop Buah"
         '
-        'teh
+        'jus
         '
-        Me.teh.AutoSize = True
-        Me.teh.Location = New System.Drawing.Point(30, 106)
-        Me.teh.Name = "teh"
-        Me.teh.Size = New System.Drawing.Size(75, 13)
-        Me.teh.TabIndex = 54
-        Me.teh.Text = "2. Fruity Juice "
+        Me.jus.AutoSize = True
+        Me.jus.Location = New System.Drawing.Point(30, 106)
+        Me.jus.Name = "jus"
+        Me.jus.Size = New System.Drawing.Size(75, 13)
+        Me.jus.TabIndex = 54
+        Me.jus.Text = "2. Fruity Juice "
         '
-        'aqua
+        'tehes
         '
-        Me.aqua.AutoSize = True
-        Me.aqua.Location = New System.Drawing.Point(30, 77)
-        Me.aqua.Name = "aqua"
-        Me.aqua.Size = New System.Drawing.Size(56, 13)
-        Me.aqua.TabIndex = 53
-        Me.aqua.Text = "1. Ice Tea"
+        Me.tehes.AutoSize = True
+        Me.tehes.Location = New System.Drawing.Point(30, 77)
+        Me.tehes.Name = "tehes"
+        Me.tehes.Size = New System.Drawing.Size(56, 13)
+        Me.tehes.TabIndex = 53
+        Me.tehes.Text = "1. Ice Tea"
         '
         'Label7
         '
@@ -314,41 +314,41 @@ Partial Class Form_Pembayaran
         Me.Label7.TabIndex = 52
         Me.Label7.Text = "A. Minuman dan  Dessert "
         '
-        'pecelayam
+        'sambal
         '
-        Me.pecelayam.AutoSize = True
-        Me.pecelayam.Location = New System.Drawing.Point(26, 393)
-        Me.pecelayam.Name = "pecelayam"
-        Me.pecelayam.Size = New System.Drawing.Size(114, 13)
-        Me.pecelayam.TabIndex = 51
-        Me.pecelayam.Text = "18. Ikan Sambal Wijen"
+        Me.sambal.AutoSize = True
+        Me.sambal.Location = New System.Drawing.Point(26, 393)
+        Me.sambal.Name = "sambal"
+        Me.sambal.Size = New System.Drawing.Size(114, 13)
+        Me.sambal.TabIndex = 51
+        Me.sambal.Text = "18. Ikan Sambal Wijen"
         '
-        'sotoayam
+        'panggang
         '
-        Me.sotoayam.AutoSize = True
-        Me.sotoayam.Location = New System.Drawing.Point(26, 366)
-        Me.sotoayam.Name = "sotoayam"
-        Me.sotoayam.Size = New System.Drawing.Size(101, 13)
-        Me.sotoayam.TabIndex = 50
-        Me.sotoayam.Text = "17. Chiken Roasted"
+        Me.panggang.AutoSize = True
+        Me.panggang.Location = New System.Drawing.Point(26, 366)
+        Me.panggang.Name = "panggang"
+        Me.panggang.Size = New System.Drawing.Size(101, 13)
+        Me.panggang.TabIndex = 50
+        Me.panggang.Text = "17. Chiken Roasted"
         '
-        'bakso
+        'pasta
         '
-        Me.bakso.AutoSize = True
-        Me.bakso.Location = New System.Drawing.Point(26, 339)
-        Me.bakso.Name = "bakso"
-        Me.bakso.Size = New System.Drawing.Size(52, 13)
-        Me.bakso.TabIndex = 49
-        Me.bakso.Text = "16. Pasta"
+        Me.pasta.AutoSize = True
+        Me.pasta.Location = New System.Drawing.Point(26, 339)
+        Me.pasta.Name = "pasta"
+        Me.pasta.Size = New System.Drawing.Size(52, 13)
+        Me.pasta.TabIndex = 49
+        Me.pasta.Text = "16. Pasta"
         '
-        'soto
+        'udang
         '
-        Me.soto.AutoSize = True
-        Me.soto.Location = New System.Drawing.Point(26, 313)
-        Me.soto.Name = "soto"
-        Me.soto.Size = New System.Drawing.Size(119, 13)
-        Me.soto.TabIndex = 48
-        Me.soto.Text = "15. Nasi Goreng Udang"
+        Me.udang.AutoSize = True
+        Me.udang.Location = New System.Drawing.Point(26, 313)
+        Me.udang.Name = "udang"
+        Me.udang.Size = New System.Drawing.Size(119, 13)
+        Me.udang.TabIndex = 48
+        Me.udang.Text = "15. Nasi Goreng Udang"
         '
         'Label2
         '
@@ -373,14 +373,14 @@ Partial Class Form_Pembayaran
         Me.TextBox10.Size = New System.Drawing.Size(29, 20)
         Me.TextBox10.TabIndex = 93
         '
-        'Label1
+        'esbuah
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(29, 186)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 13)
-        Me.Label1.TabIndex = 92
-        Me.Label1.Text = "5. S Buah"
+        Me.esbuah.AutoSize = True
+        Me.esbuah.Location = New System.Drawing.Point(29, 186)
+        Me.esbuah.Name = "esbuah"
+        Me.esbuah.Size = New System.Drawing.Size(54, 13)
+        Me.esbuah.TabIndex = 92
+        Me.esbuah.Text = "5. S Buah"
         '
         'menu6
         '
@@ -396,14 +396,14 @@ Partial Class Form_Pembayaran
         Me.TextBox12.Size = New System.Drawing.Size(29, 20)
         Me.TextBox12.TabIndex = 96
         '
-        'Label3
+        'kopi
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(29, 211)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 13)
-        Me.Label3.TabIndex = 95
-        Me.Label3.Text = "6. Coffe"
+        Me.kopi.AutoSize = True
+        Me.kopi.Location = New System.Drawing.Point(29, 211)
+        Me.kopi.Name = "kopi"
+        Me.kopi.Size = New System.Drawing.Size(44, 13)
+        Me.kopi.TabIndex = 95
+        Me.kopi.Text = "6. Coffe"
         '
         'menu12
         '
@@ -419,14 +419,14 @@ Partial Class Form_Pembayaran
         Me.TextBox14.Size = New System.Drawing.Size(29, 20)
         Me.TextBox14.TabIndex = 116
         '
-        'Label4
+        'bakpao
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(293, 206)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(62, 13)
-        Me.Label4.TabIndex = 115
-        Me.Label4.Text = "12. Bakpao"
+        Me.bakpao.AutoSize = True
+        Me.bakpao.Location = New System.Drawing.Point(293, 206)
+        Me.bakpao.Name = "bakpao"
+        Me.bakpao.Size = New System.Drawing.Size(62, 13)
+        Me.bakpao.TabIndex = 115
+        Me.bakpao.Text = "12. Bakpao"
         '
         'menu11
         '
@@ -442,14 +442,14 @@ Partial Class Form_Pembayaran
         Me.TextBox16.Size = New System.Drawing.Size(29, 20)
         Me.TextBox16.TabIndex = 113
         '
-        'Label5
+        'burger
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(293, 181)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(74, 13)
-        Me.Label5.TabIndex = 112
-        Me.Label5.Text = "11. Big Burger"
+        Me.burger.AutoSize = True
+        Me.burger.Location = New System.Drawing.Point(293, 181)
+        Me.burger.Name = "burger"
+        Me.burger.Size = New System.Drawing.Size(74, 13)
+        Me.burger.TabIndex = 112
+        Me.burger.Text = "11. Big Burger"
         '
         'menu10
         '
@@ -525,41 +525,41 @@ Partial Class Form_Pembayaran
         Me.Label8.TabIndex = 102
         Me.Label8.Text = "QTY"
         '
-        'Label9
+        'ubi
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(294, 155)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(80, 13)
-        Me.Label9.TabIndex = 101
-        Me.Label9.Text = "10. Ubi Wasabi"
+        Me.ubi.AutoSize = True
+        Me.ubi.Location = New System.Drawing.Point(294, 155)
+        Me.ubi.Name = "ubi"
+        Me.ubi.Size = New System.Drawing.Size(80, 13)
+        Me.ubi.TabIndex = 101
+        Me.ubi.Text = "10. Ubi Wasabi"
         '
-        'Label10
+        'takoyaki
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(294, 131)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(63, 13)
-        Me.Label10.TabIndex = 100
-        Me.Label10.Text = "9. Takoyaki"
+        Me.takoyaki.AutoSize = True
+        Me.takoyaki.Location = New System.Drawing.Point(294, 131)
+        Me.takoyaki.Name = "takoyaki"
+        Me.takoyaki.Size = New System.Drawing.Size(63, 13)
+        Me.takoyaki.TabIndex = 100
+        Me.takoyaki.Text = "9. Takoyaki"
         '
-        'Label11
+        'amagos
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(294, 101)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(57, 13)
-        Me.Label11.TabIndex = 99
-        Me.Label11.Text = "8. Amagos"
+        Me.amagos.AutoSize = True
+        Me.amagos.Location = New System.Drawing.Point(294, 101)
+        Me.amagos.Name = "amagos"
+        Me.amagos.Size = New System.Drawing.Size(57, 13)
+        Me.amagos.TabIndex = 99
+        Me.amagos.Text = "8. Amagos"
         '
-        'Label14
+        'tofu
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(294, 72)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(77, 13)
-        Me.Label14.TabIndex = 98
-        Me.Label14.Text = "7. Chiken Tofu"
+        Me.tofu.AutoSize = True
+        Me.tofu.Location = New System.Drawing.Point(294, 72)
+        Me.tofu.Name = "tofu"
+        Me.tofu.Size = New System.Drawing.Size(77, 13)
+        Me.tofu.TabIndex = 98
+        Me.tofu.Text = "7. Chiken Tofu"
         '
         'menu14
         '
@@ -575,14 +575,14 @@ Partial Class Form_Pembayaran
         Me.TextBox26.Size = New System.Drawing.Size(29, 20)
         Me.TextBox26.TabIndex = 122
         '
-        'Label15
+        'pudding
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(293, 255)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(92, 13)
-        Me.Label15.TabIndex = 121
-        Me.Label15.Text = "14. Fruity Pudding"
+        Me.pudding.AutoSize = True
+        Me.pudding.Location = New System.Drawing.Point(293, 255)
+        Me.pudding.Name = "pudding"
+        Me.pudding.Size = New System.Drawing.Size(92, 13)
+        Me.pudding.TabIndex = 121
+        Me.pudding.Text = "14. Fruity Pudding"
         '
         'menu13
         '
@@ -598,14 +598,14 @@ Partial Class Form_Pembayaran
         Me.TextBox28.Size = New System.Drawing.Size(29, 20)
         Me.TextBox28.TabIndex = 119
         '
-        'Label18
+        'almond
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(293, 230)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(88, 13)
-        Me.Label18.TabIndex = 118
-        Me.Label18.Text = "13. Almond Cake"
+        Me.almond.AutoSize = True
+        Me.almond.Location = New System.Drawing.Point(293, 230)
+        Me.almond.Name = "almond"
+        Me.almond.Size = New System.Drawing.Size(88, 13)
+        Me.almond.TabIndex = 118
+        Me.almond.Text = "13. Almond Cake"
         '
         'menu20
         '
@@ -635,23 +635,23 @@ Partial Class Form_Pembayaran
         Me.TextBox32.Size = New System.Drawing.Size(27, 20)
         Me.TextBox32.TabIndex = 126
         '
-        'Label16
+        'buntut
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(26, 446)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(78, 13)
-        Me.Label16.TabIndex = 125
-        Me.Label16.Text = "20. Sop Buntut"
+        Me.buntut.AutoSize = True
+        Me.buntut.Location = New System.Drawing.Point(26, 446)
+        Me.buntut.Name = "buntut"
+        Me.buntut.Size = New System.Drawing.Size(78, 13)
+        Me.buntut.TabIndex = 125
+        Me.buntut.Text = "20. Sop Buntut"
         '
-        'Label17
+        'kepiting
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(26, 419)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(99, 13)
-        Me.Label17.TabIndex = 124
-        Me.Label17.Text = "19. Kepiting Bumbu"
+        Me.kepiting.AutoSize = True
+        Me.kepiting.Location = New System.Drawing.Point(26, 419)
+        Me.kepiting.Name = "kepiting"
+        Me.kepiting.Size = New System.Drawing.Size(99, 13)
+        Me.kepiting.TabIndex = 124
+        Me.kepiting.Text = "19. Kepiting Bumbu"
         '
         'menu26
         '
@@ -681,23 +681,23 @@ Partial Class Form_Pembayaran
         Me.TextBox36.Size = New System.Drawing.Size(27, 20)
         Me.TextBox36.TabIndex = 144
         '
-        'Label19
+        'oncom
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(289, 447)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(83, 13)
-        Me.Label19.TabIndex = 143
-        Me.Label19.Text = "26. Nasi Oncom"
+        Me.oncom.AutoSize = True
+        Me.oncom.Location = New System.Drawing.Point(289, 447)
+        Me.oncom.Name = "oncom"
+        Me.oncom.Size = New System.Drawing.Size(83, 13)
+        Me.oncom.TabIndex = 143
+        Me.oncom.Text = "26. Nasi Oncom"
         '
-        'Label20
+        'bali
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(289, 420)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(71, 13)
-        Me.Label20.TabIndex = 142
-        Me.Label20.Text = "25. Ayam Bali"
+        Me.bali.AutoSize = True
+        Me.bali.Location = New System.Drawing.Point(289, 420)
+        Me.bali.Name = "bali"
+        Me.bali.Size = New System.Drawing.Size(71, 13)
+        Me.bali.TabIndex = 142
+        Me.bali.Text = "25. Ayam Bali"
         '
         'menu24
         '
@@ -755,41 +755,41 @@ Partial Class Form_Pembayaran
         Me.TextBox44.Size = New System.Drawing.Size(25, 20)
         Me.TextBox44.TabIndex = 134
         '
-        'Label21
+        'beef
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(289, 394)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(68, 13)
-        Me.Label21.TabIndex = 133
-        Me.Label21.Text = "24. Beef Stik"
+        Me.beef.AutoSize = True
+        Me.beef.Location = New System.Drawing.Point(289, 394)
+        Me.beef.Name = "beef"
+        Me.beef.Size = New System.Drawing.Size(68, 13)
+        Me.beef.TabIndex = 133
+        Me.beef.Text = "24. Beef Stik"
         '
-        'Label22
+        'sate
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(289, 367)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(47, 13)
-        Me.Label22.TabIndex = 132
-        Me.Label22.Text = "23. Sate"
+        Me.sate.AutoSize = True
+        Me.sate.Location = New System.Drawing.Point(289, 367)
+        Me.sate.Name = "sate"
+        Me.sate.Size = New System.Drawing.Size(47, 13)
+        Me.sate.TabIndex = 132
+        Me.sate.Text = "23. Sate"
         '
-        'Label23
+        'salmon
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(289, 340)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(109, 13)
-        Me.Label23.TabIndex = 131
-        Me.Label23.Text = "22. Salmon's Spinach"
+        Me.salmon.AutoSize = True
+        Me.salmon.Location = New System.Drawing.Point(289, 340)
+        Me.salmon.Name = "salmon"
+        Me.salmon.Size = New System.Drawing.Size(109, 13)
+        Me.salmon.TabIndex = 131
+        Me.salmon.Text = "22. Salmon's Spinach"
         '
-        'Label24
+        'rempah
         '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(289, 314)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(94, 13)
-        Me.Label24.TabIndex = 130
-        Me.Label24.Text = "21. Ayam Rempah"
+        Me.rempah.AutoSize = True
+        Me.rempah.Location = New System.Drawing.Point(289, 314)
+        Me.rempah.Name = "rempah"
+        Me.rempah.Size = New System.Drawing.Size(94, 13)
+        Me.rempah.TabIndex = 130
+        Me.rempah.Text = "21. Ayam Rempah"
         '
         'minum
         '
@@ -882,8 +882,8 @@ Partial Class Form_Pembayaran
         Me.Controls.Add(Me.menu25)
         Me.Controls.Add(Me.TextBox35)
         Me.Controls.Add(Me.TextBox36)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.oncom)
+        Me.Controls.Add(Me.bali)
         Me.Controls.Add(Me.menu24)
         Me.Controls.Add(Me.menu23)
         Me.Controls.Add(Me.menu22)
@@ -892,28 +892,28 @@ Partial Class Form_Pembayaran
         Me.Controls.Add(Me.TextBox42)
         Me.Controls.Add(Me.TextBox43)
         Me.Controls.Add(Me.TextBox44)
-        Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.Label22)
-        Me.Controls.Add(Me.Label23)
-        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.beef)
+        Me.Controls.Add(Me.sate)
+        Me.Controls.Add(Me.salmon)
+        Me.Controls.Add(Me.rempah)
         Me.Controls.Add(Me.menu20)
         Me.Controls.Add(Me.menu19)
         Me.Controls.Add(Me.TextBox31)
         Me.Controls.Add(Me.TextBox32)
-        Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.buntut)
+        Me.Controls.Add(Me.kepiting)
         Me.Controls.Add(Me.menu14)
         Me.Controls.Add(Me.TextBox26)
-        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.pudding)
         Me.Controls.Add(Me.menu13)
         Me.Controls.Add(Me.TextBox28)
-        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.almond)
         Me.Controls.Add(Me.menu12)
         Me.Controls.Add(Me.TextBox14)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.bakpao)
         Me.Controls.Add(Me.menu11)
         Me.Controls.Add(Me.TextBox16)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.burger)
         Me.Controls.Add(Me.menu10)
         Me.Controls.Add(Me.menu9)
         Me.Controls.Add(Me.menu8)
@@ -924,16 +924,16 @@ Partial Class Form_Pembayaran
         Me.Controls.Add(Me.TextBox24)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.ubi)
+        Me.Controls.Add(Me.takoyaki)
+        Me.Controls.Add(Me.amagos)
+        Me.Controls.Add(Me.tofu)
         Me.Controls.Add(Me.menu6)
         Me.Controls.Add(Me.TextBox12)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.kopi)
         Me.Controls.Add(Me.menu5)
         Me.Controls.Add(Me.TextBox10)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.esbuah)
         Me.Controls.Add(Me.dt)
         Me.Controls.Add(Me.time)
         Me.Controls.Add(Me.menu4)
@@ -954,15 +954,15 @@ Partial Class Form_Pembayaran
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.kelapa)
-        Me.Controls.Add(Me.campur)
-        Me.Controls.Add(Me.teh)
-        Me.Controls.Add(Me.aqua)
+        Me.Controls.Add(Me.cendol)
+        Me.Controls.Add(Me.sopbuah)
+        Me.Controls.Add(Me.jus)
+        Me.Controls.Add(Me.tehes)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.pecelayam)
-        Me.Controls.Add(Me.sotoayam)
-        Me.Controls.Add(Me.bakso)
-        Me.Controls.Add(Me.soto)
+        Me.Controls.Add(Me.sambal)
+        Me.Controls.Add(Me.panggang)
+        Me.Controls.Add(Me.pasta)
+        Me.Controls.Add(Me.udang)
         Me.Controls.Add(Me.Label2)
         Me.Name = "Form_Pembayaran"
         Me.Text = "Form_Pembayaran"
@@ -991,28 +991,28 @@ Partial Class Form_Pembayaran
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents kelapa As System.Windows.Forms.Label
-    Friend WithEvents campur As System.Windows.Forms.Label
-    Friend WithEvents teh As System.Windows.Forms.Label
-    Friend WithEvents aqua As System.Windows.Forms.Label
+    Friend WithEvents cendol As System.Windows.Forms.Label
+    Friend WithEvents sopbuah As System.Windows.Forms.Label
+    Friend WithEvents jus As System.Windows.Forms.Label
+    Friend WithEvents tehes As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents pecelayam As System.Windows.Forms.Label
-    Friend WithEvents sotoayam As System.Windows.Forms.Label
-    Friend WithEvents bakso As System.Windows.Forms.Label
-    Friend WithEvents soto As System.Windows.Forms.Label
+    Friend WithEvents sambal As System.Windows.Forms.Label
+    Friend WithEvents panggang As System.Windows.Forms.Label
+    Friend WithEvents pasta As System.Windows.Forms.Label
+    Friend WithEvents udang As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents menu5 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents esbuah As System.Windows.Forms.Label
     Friend WithEvents menu6 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents kopi As System.Windows.Forms.Label
     Friend WithEvents menu12 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents bakpao As System.Windows.Forms.Label
     Friend WithEvents menu11 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents burger As System.Windows.Forms.Label
     Friend WithEvents menu10 As System.Windows.Forms.TextBox
     Friend WithEvents menu9 As System.Windows.Forms.TextBox
     Friend WithEvents menu8 As System.Windows.Forms.TextBox
@@ -1023,28 +1023,28 @@ Partial Class Form_Pembayaran
     Friend WithEvents TextBox24 As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents ubi As System.Windows.Forms.Label
+    Friend WithEvents takoyaki As System.Windows.Forms.Label
+    Friend WithEvents amagos As System.Windows.Forms.Label
+    Friend WithEvents tofu As System.Windows.Forms.Label
     Friend WithEvents menu14 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
-    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents pudding As System.Windows.Forms.Label
     Friend WithEvents menu13 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox28 As System.Windows.Forms.TextBox
-    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents almond As System.Windows.Forms.Label
     Friend WithEvents menu20 As System.Windows.Forms.TextBox
     Friend WithEvents menu19 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox31 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox32 As System.Windows.Forms.TextBox
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents buntut As System.Windows.Forms.Label
+    Friend WithEvents kepiting As System.Windows.Forms.Label
     Friend WithEvents menu26 As System.Windows.Forms.TextBox
     Friend WithEvents menu25 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox35 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox36 As System.Windows.Forms.TextBox
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents oncom As System.Windows.Forms.Label
+    Friend WithEvents bali As System.Windows.Forms.Label
     Friend WithEvents menu24 As System.Windows.Forms.TextBox
     Friend WithEvents menu23 As System.Windows.Forms.TextBox
     Friend WithEvents menu22 As System.Windows.Forms.TextBox
@@ -1053,10 +1053,10 @@ Partial Class Form_Pembayaran
     Friend WithEvents TextBox42 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox43 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox44 As System.Windows.Forms.TextBox
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents beef As System.Windows.Forms.Label
+    Friend WithEvents sate As System.Windows.Forms.Label
+    Friend WithEvents salmon As System.Windows.Forms.Label
+    Friend WithEvents rempah As System.Windows.Forms.Label
     Friend WithEvents minum As System.Windows.Forms.TextBox
     Friend WithEvents makan As System.Windows.Forms.TextBox
     Friend WithEvents Label25 As System.Windows.Forms.Label
