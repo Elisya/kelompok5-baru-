@@ -34,6 +34,30 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tambahButton.Click
+        KasirBindingSource.AddNew()
+    End Sub
 
+    Private Sub hapusButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles hapusButton.Click
+        Me.Validate()
+        Me.KasirBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.Kel_5_si_restoDataSet)
+
+        MessageBox.Show("Data Telah Terhapus")
+    End Sub
+
+    Private Sub simpanButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles simpanButton.Click
+        Me.Validate()
+        Me.KasirBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.Kel_5_si_restoDataSet)
+
+        MessageBox.Show("Data Telah Tersimpan")
+    End Sub
+
+    Private Sub batalButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles batalButton.Click
+        KasirBindingSource.CancelEdit()
+    End Sub
+
+    Private Sub keluarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles keluarButton.Click
+        Me.Close()
     End Sub
 End Class

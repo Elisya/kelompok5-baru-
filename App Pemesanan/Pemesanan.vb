@@ -12,11 +12,6 @@
         Me.PemesananTableAdapter.Fill(Me.Kel_5_si_restoDataSet.pemesanan)
 
     End Sub
-
-    Private Sub PemesananDataGridView_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles PemesananDataGridView.CellContentClick
-
-    End Sub
-
     Private Sub tambahButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tambahButton.Click
         PemesananBindingSource.AddNew()
 
@@ -44,7 +39,9 @@
     End Sub
 
     Private Sub keluarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles keluarButton.Click
-
+        Me.Close()
 
     End Sub
+
+    
 End Class
