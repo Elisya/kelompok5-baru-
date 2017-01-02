@@ -112,4 +112,5 @@
     Private Sub Button26_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button26.Click
         MessageBox.Show("Fruity  Pudding (Rp.25.000,-)", "Menu")
     End Sub
+
 End Class

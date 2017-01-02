@@ -55,6 +55,8 @@ Partial Class formPemesanan
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PemesananTableAdapter = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.pemesananTableAdapter()
         Me.TableAdapterManager = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Id_MejaLabel = New System.Windows.Forms.Label()
         Nama_MakananLabel = New System.Windows.Forms.Label()
         Jumlah_PesananLabel = New System.Windows.Forms.Label()
@@ -134,6 +136,8 @@ Partial Class formPemesanan
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Aquamarine
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.keluarButton)
         Me.GroupBox1.Controls.Add(Me.batalButton)
         Me.GroupBox1.Controls.Add(Me.simpanButton)
@@ -163,7 +167,7 @@ Partial Class formPemesanan
         '
         'keluarButton
         '
-        Me.keluarButton.Location = New System.Drawing.Point(150, 260)
+        Me.keluarButton.Location = New System.Drawing.Point(145, 260)
         Me.keluarButton.Name = "keluarButton"
         Me.keluarButton.Size = New System.Drawing.Size(75, 23)
         Me.keluarButton.TabIndex = 19
@@ -172,7 +176,7 @@ Partial Class formPemesanan
         '
         'batalButton
         '
-        Me.batalButton.Location = New System.Drawing.Point(47, 260)
+        Me.batalButton.Location = New System.Drawing.Point(41, 260)
         Me.batalButton.Name = "batalButton"
         Me.batalButton.Size = New System.Drawing.Size(75, 23)
         Me.batalButton.TabIndex = 18
@@ -181,7 +185,7 @@ Partial Class formPemesanan
         '
         'simpanButton
         '
-        Me.simpanButton.Location = New System.Drawing.Point(189, 231)
+        Me.simpanButton.Location = New System.Drawing.Point(189, 216)
         Me.simpanButton.Name = "simpanButton"
         Me.simpanButton.Size = New System.Drawing.Size(75, 23)
         Me.simpanButton.TabIndex = 17
@@ -190,7 +194,7 @@ Partial Class formPemesanan
         '
         'hapusButton
         '
-        Me.hapusButton.Location = New System.Drawing.Point(96, 231)
+        Me.hapusButton.Location = New System.Drawing.Point(96, 216)
         Me.hapusButton.Name = "hapusButton"
         Me.hapusButton.Size = New System.Drawing.Size(75, 23)
         Me.hapusButton.TabIndex = 16
@@ -199,7 +203,7 @@ Partial Class formPemesanan
         '
         'tambahButton
         '
-        Me.tambahButton.Location = New System.Drawing.Point(6, 231)
+        Me.tambahButton.Location = New System.Drawing.Point(6, 216)
         Me.tambahButton.Name = "tambahButton"
         Me.tambahButton.Size = New System.Drawing.Size(75, 23)
         Me.tambahButton.TabIndex = 15
@@ -278,9 +282,9 @@ Partial Class formPemesanan
         Me.PemesananDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PemesananDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.PemesananDataGridView.DataSource = Me.PemesananBindingSource
-        Me.PemesananDataGridView.Location = New System.Drawing.Point(300, 19)
+        Me.PemesananDataGridView.Location = New System.Drawing.Point(300, 45)
         Me.PemesananDataGridView.Name = "PemesananDataGridView"
-        Me.PemesananDataGridView.Size = New System.Drawing.Size(738, 264)
+        Me.PemesananDataGridView.Size = New System.Drawing.Size(738, 238)
         Me.PemesananDataGridView.TabIndex = 0
         '
         'DataGridViewTextBoxColumn1
@@ -339,6 +343,22 @@ Partial Class formPemesanan
         Me.TableAdapterManager.pemesananTableAdapter = Me.PemesananTableAdapter
         Me.TableAdapterManager.UpdateOrder = App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(947, 16)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "Cari"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(300, 16)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(641, 20)
+        Me.TextBox1.TabIndex = 21
+        '
         'formPemesanan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -380,4 +400,6 @@ Partial Class formPemesanan
     Friend WithEvents Kasir_Id_MejaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Pelayan_Id_PelayanTextBox As System.Windows.Forms.TextBox
     Friend WithEvents keluarButton As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
