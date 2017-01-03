@@ -141,7 +141,7 @@ Partial Class formPembayaran
         '
         'batalButton
         '
-        Me.batalButton.Location = New System.Drawing.Point(452, 205)
+        Me.batalButton.Location = New System.Drawing.Point(455, 205)
         Me.batalButton.Name = "batalButton"
         Me.batalButton.Size = New System.Drawing.Size(73, 23)
         Me.batalButton.TabIndex = 18
