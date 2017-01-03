@@ -24,12 +24,12 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.menuButton = New System.Windows.Forms.Button()
-        Me.pemesananButton = New System.Windows.Forms.Button()
-        Me.pembayaranButton3 = New System.Windows.Forms.Button()
-        Me.infoButton = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.infoButton = New System.Windows.Forms.Button()
+        Me.pembayaranButton3 = New System.Windows.Forms.Button()
+        Me.pemesananButton = New System.Windows.Forms.Button()
+        Me.menuButton = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,45 +49,14 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
         '
-        'menuButton
+        'PictureBox1
         '
-        Me.menuButton.Image = CType(resources.GetObject("menuButton.Image"), System.Drawing.Image)
-        Me.menuButton.Location = New System.Drawing.Point(299, 19)
-        Me.menuButton.Name = "menuButton"
-        Me.menuButton.Size = New System.Drawing.Size(203, 129)
-        Me.menuButton.TabIndex = 0
-        Me.menuButton.Text = "Menu"
-        Me.menuButton.UseVisualStyleBackColor = True
-        '
-        'pemesananButton
-        '
-        Me.pemesananButton.Image = CType(resources.GetObject("pemesananButton.Image"), System.Drawing.Image)
-        Me.pemesananButton.Location = New System.Drawing.Point(299, 154)
-        Me.pemesananButton.Name = "pemesananButton"
-        Me.pemesananButton.Size = New System.Drawing.Size(203, 118)
-        Me.pemesananButton.TabIndex = 1
-        Me.pemesananButton.Text = "Pemesanan"
-        Me.pemesananButton.UseVisualStyleBackColor = True
-        '
-        'pembayaranButton3
-        '
-        Me.pembayaranButton3.Image = CType(resources.GetObject("pembayaranButton3.Image"), System.Drawing.Image)
-        Me.pembayaranButton3.Location = New System.Drawing.Point(299, 278)
-        Me.pembayaranButton3.Name = "pembayaranButton3"
-        Me.pembayaranButton3.Size = New System.Drawing.Size(203, 154)
-        Me.pembayaranButton3.TabIndex = 2
-        Me.pembayaranButton3.Text = "Pembayaran"
-        Me.pembayaranButton3.UseVisualStyleBackColor = True
-        '
-        'infoButton
-        '
-        Me.infoButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.infoButton.Location = New System.Drawing.Point(40, 255)
-        Me.infoButton.Name = "infoButton"
-        Me.infoButton.Size = New System.Drawing.Size(91, 134)
-        Me.infoButton.TabIndex = 3
-        Me.infoButton.Text = "More Info"
-        Me.infoButton.UseVisualStyleBackColor = False
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 22)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(285, 206)
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
         '
         'Button5
         '
@@ -99,14 +68,48 @@ Partial Class Form1
         Me.Button5.Text = "Exit"
         Me.Button5.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'infoButton
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 22)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(285, 206)
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
+        Me.infoButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.infoButton.Location = New System.Drawing.Point(40, 255)
+        Me.infoButton.Name = "infoButton"
+        Me.infoButton.Size = New System.Drawing.Size(91, 134)
+        Me.infoButton.TabIndex = 3
+        Me.infoButton.Text = "More Info"
+        Me.infoButton.UseVisualStyleBackColor = False
+        '
+        'pembayaranButton3
+        '
+        Me.pembayaranButton3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pembayaranButton3.Image = CType(resources.GetObject("pembayaranButton3.Image"), System.Drawing.Image)
+        Me.pembayaranButton3.Location = New System.Drawing.Point(299, 278)
+        Me.pembayaranButton3.Name = "pembayaranButton3"
+        Me.pembayaranButton3.Size = New System.Drawing.Size(203, 154)
+        Me.pembayaranButton3.TabIndex = 2
+        Me.pembayaranButton3.Text = "Pembayaran"
+        Me.pembayaranButton3.UseVisualStyleBackColor = True
+        '
+        'pemesananButton
+        '
+        Me.pemesananButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pemesananButton.Image = CType(resources.GetObject("pemesananButton.Image"), System.Drawing.Image)
+        Me.pemesananButton.Location = New System.Drawing.Point(299, 154)
+        Me.pemesananButton.Name = "pemesananButton"
+        Me.pemesananButton.Size = New System.Drawing.Size(203, 118)
+        Me.pemesananButton.TabIndex = 1
+        Me.pemesananButton.Text = "Pemesanan"
+        Me.pemesananButton.UseVisualStyleBackColor = True
+        '
+        'menuButton
+        '
+        Me.menuButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.menuButton.Image = CType(resources.GetObject("menuButton.Image"), System.Drawing.Image)
+        Me.menuButton.Location = New System.Drawing.Point(299, 19)
+        Me.menuButton.Name = "menuButton"
+        Me.menuButton.Size = New System.Drawing.Size(203, 129)
+        Me.menuButton.TabIndex = 0
+        Me.menuButton.Text = "Menu"
+        Me.menuButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
