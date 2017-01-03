@@ -125,52 +125,52 @@ Partial Class formPembayaran
         Me.GroupBox1.Controls.Add(Me.Total_PembayaranTextBox)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(821, 280)
+        Me.GroupBox1.Size = New System.Drawing.Size(821, 266)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pembayaran"
         '
         'keluarButton
         '
-        Me.keluarButton.Location = New System.Drawing.Point(91, 230)
+        Me.keluarButton.Location = New System.Drawing.Point(669, 205)
         Me.keluarButton.Name = "keluarButton"
-        Me.keluarButton.Size = New System.Drawing.Size(90, 23)
+        Me.keluarButton.Size = New System.Drawing.Size(73, 23)
         Me.keluarButton.TabIndex = 19
         Me.keluarButton.Text = "Keluar"
         Me.keluarButton.UseVisualStyleBackColor = True
         '
         'batalButton
         '
-        Me.batalButton.Location = New System.Drawing.Point(151, 201)
+        Me.batalButton.Location = New System.Drawing.Point(452, 205)
         Me.batalButton.Name = "batalButton"
-        Me.batalButton.Size = New System.Drawing.Size(104, 23)
+        Me.batalButton.Size = New System.Drawing.Size(73, 23)
         Me.batalButton.TabIndex = 18
         Me.batalButton.Text = "Batal"
         Me.batalButton.UseVisualStyleBackColor = True
         '
         'hapusButton
         '
-        Me.hapusButton.Location = New System.Drawing.Point(151, 172)
+        Me.hapusButton.Location = New System.Drawing.Point(231, 205)
         Me.hapusButton.Name = "hapusButton"
-        Me.hapusButton.Size = New System.Drawing.Size(104, 23)
+        Me.hapusButton.Size = New System.Drawing.Size(73, 23)
         Me.hapusButton.TabIndex = 17
         Me.hapusButton.Text = "Hapus"
         Me.hapusButton.UseVisualStyleBackColor = True
         '
         'simpanButton
         '
-        Me.simpanButton.Location = New System.Drawing.Point(25, 201)
+        Me.simpanButton.Location = New System.Drawing.Point(564, 205)
         Me.simpanButton.Name = "simpanButton"
-        Me.simpanButton.Size = New System.Drawing.Size(96, 23)
+        Me.simpanButton.Size = New System.Drawing.Size(73, 23)
         Me.simpanButton.TabIndex = 16
         Me.simpanButton.Text = "Simpan"
         Me.simpanButton.UseVisualStyleBackColor = True
         '
         'tambahButton
         '
-        Me.tambahButton.Location = New System.Drawing.Point(25, 172)
+        Me.tambahButton.Location = New System.Drawing.Point(342, 205)
         Me.tambahButton.Name = "tambahButton"
-        Me.tambahButton.Size = New System.Drawing.Size(96, 23)
+        Me.tambahButton.Size = New System.Drawing.Size(73, 23)
         Me.tambahButton.TabIndex = 15
         Me.tambahButton.Text = "Tambah"
         Me.tambahButton.UseVisualStyleBackColor = True
@@ -178,12 +178,14 @@ Partial Class formPembayaran
         'KasirDataGridView
         '
         Me.KasirDataGridView.AutoGenerateColumns = False
+        Me.KasirDataGridView.BackgroundColor = System.Drawing.Color.Aqua
         Me.KasirDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.KasirDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.KasirDataGridView.DataSource = Me.KasirBindingSource
-        Me.KasirDataGridView.Location = New System.Drawing.Point(271, 19)
+        Me.KasirDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.KasirDataGridView.Location = New System.Drawing.Point(215, 19)
         Me.KasirDataGridView.Name = "KasirDataGridView"
-        Me.KasirDataGridView.Size = New System.Drawing.Size(544, 220)
+        Me.KasirDataGridView.Size = New System.Drawing.Size(544, 180)
         Me.KasirDataGridView.TabIndex = 14
         '
         'DataGridViewTextBoxColumn1
@@ -231,7 +233,7 @@ Partial Class formPembayaran
         Me.Id_MejaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource, "Id Meja", True))
         Me.Id_MejaTextBox.Location = New System.Drawing.Point(111, 27)
         Me.Id_MejaTextBox.Name = "Id_MejaTextBox"
-        Me.Id_MejaTextBox.Size = New System.Drawing.Size(144, 20)
+        Me.Id_MejaTextBox.Size = New System.Drawing.Size(55, 20)
         Me.Id_MejaTextBox.TabIndex = 6
         '
         'Nama_MakananTextBox
@@ -239,7 +241,7 @@ Partial Class formPembayaran
         Me.Nama_MakananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource, "Nama Makanan", True))
         Me.Nama_MakananTextBox.Location = New System.Drawing.Point(111, 53)
         Me.Nama_MakananTextBox.Name = "Nama_MakananTextBox"
-        Me.Nama_MakananTextBox.Size = New System.Drawing.Size(144, 20)
+        Me.Nama_MakananTextBox.Size = New System.Drawing.Size(98, 20)
         Me.Nama_MakananTextBox.TabIndex = 8
         '
         'Harga_MakananTextBox
@@ -247,7 +249,7 @@ Partial Class formPembayaran
         Me.Harga_MakananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource, "Harga Makanan", True))
         Me.Harga_MakananTextBox.Location = New System.Drawing.Point(111, 79)
         Me.Harga_MakananTextBox.Name = "Harga_MakananTextBox"
-        Me.Harga_MakananTextBox.Size = New System.Drawing.Size(144, 20)
+        Me.Harga_MakananTextBox.Size = New System.Drawing.Size(98, 20)
         Me.Harga_MakananTextBox.TabIndex = 10
         '
         'Jumlah_PesananTextBox
@@ -255,7 +257,7 @@ Partial Class formPembayaran
         Me.Jumlah_PesananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource, "Jumlah Pesanan", True))
         Me.Jumlah_PesananTextBox.Location = New System.Drawing.Point(111, 107)
         Me.Jumlah_PesananTextBox.Name = "Jumlah_PesananTextBox"
-        Me.Jumlah_PesananTextBox.Size = New System.Drawing.Size(144, 20)
+        Me.Jumlah_PesananTextBox.Size = New System.Drawing.Size(98, 20)
         Me.Jumlah_PesananTextBox.TabIndex = 12
         '
         'Total_PembayaranTextBox
@@ -263,7 +265,7 @@ Partial Class formPembayaran
         Me.Total_PembayaranTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource, "Total Pembayaran", True))
         Me.Total_PembayaranTextBox.Location = New System.Drawing.Point(111, 137)
         Me.Total_PembayaranTextBox.Name = "Total_PembayaranTextBox"
-        Me.Total_PembayaranTextBox.Size = New System.Drawing.Size(144, 20)
+        Me.Total_PembayaranTextBox.Size = New System.Drawing.Size(98, 20)
         Me.Total_PembayaranTextBox.TabIndex = 14
         '
         'KasirTableAdapter
@@ -284,7 +286,7 @@ Partial Class formPembayaran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(856, 313)
+        Me.ClientSize = New System.Drawing.Size(773, 294)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formPembayaran"
         Me.Text = "Pembayaran"
