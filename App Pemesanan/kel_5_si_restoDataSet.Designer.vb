@@ -31,19 +31,7 @@ Partial Public Class kel_5_si_restoDataSet
     
     Private tablepelayan As pelayanDataTable
     
-    Private tablepelayan_has_pemesanan As pelayan_has_pemesananDataTable
-    
     Private tablepemesanan As pemesananDataTable
-    
-    Private relationfk_Menu_Pelayan1 As Global.System.Data.DataRelation
-    
-    Private relationfk_Pelayan_has_Pemesanan_Pelayan1 As Global.System.Data.DataRelation
-    
-    Private relationfk_Pelayan_has_Pemesanan_Pemesanan1 As Global.System.Data.DataRelation
-    
-    Private relationfk_Pemesanan_Kasir1 As Global.System.Data.DataRelation
-    
-    Private relationfk_Pemesanan_Menu As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -82,9 +70,6 @@ Partial Public Class kel_5_si_restoDataSet
             End If
             If (Not (ds.Tables("pelayan")) Is Nothing) Then
                 MyBase.Tables.Add(New pelayanDataTable(ds.Tables("pelayan")))
-            End If
-            If (Not (ds.Tables("pelayan_has_pemesanan")) Is Nothing) Then
-                MyBase.Tables.Add(New pelayan_has_pemesananDataTable(ds.Tables("pelayan_has_pemesanan")))
             End If
             If (Not (ds.Tables("pemesanan")) Is Nothing) Then
                 MyBase.Tables.Add(New pemesananDataTable(ds.Tables("pemesanan")))
@@ -133,16 +118,6 @@ Partial Public Class kel_5_si_restoDataSet
     Public ReadOnly Property pelayan() As pelayanDataTable
         Get
             Return Me.tablepelayan
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property pelayan_has_pemesanan() As pelayan_has_pemesananDataTable
-        Get
-            Return Me.tablepelayan_has_pemesanan
         End Get
     End Property
     
@@ -232,9 +207,6 @@ Partial Public Class kel_5_si_restoDataSet
             If (Not (ds.Tables("pelayan")) Is Nothing) Then
                 MyBase.Tables.Add(New pelayanDataTable(ds.Tables("pelayan")))
             End If
-            If (Not (ds.Tables("pelayan_has_pemesanan")) Is Nothing) Then
-                MyBase.Tables.Add(New pelayan_has_pemesananDataTable(ds.Tables("pelayan_has_pemesanan")))
-            End If
             If (Not (ds.Tables("pemesanan")) Is Nothing) Then
                 MyBase.Tables.Add(New pemesananDataTable(ds.Tables("pemesanan")))
             End If
@@ -288,23 +260,12 @@ Partial Public Class kel_5_si_restoDataSet
                 Me.tablepelayan.InitVars
             End If
         End If
-        Me.tablepelayan_has_pemesanan = CType(MyBase.Tables("pelayan_has_pemesanan"),pelayan_has_pemesananDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tablepelayan_has_pemesanan) Is Nothing) Then
-                Me.tablepelayan_has_pemesanan.InitVars
-            End If
-        End If
         Me.tablepemesanan = CType(MyBase.Tables("pemesanan"),pemesananDataTable)
         If (initTable = true) Then
             If (Not (Me.tablepemesanan) Is Nothing) Then
                 Me.tablepemesanan.InitVars
             End If
         End If
-        Me.relationfk_Menu_Pelayan1 = Me.Relations("fk_Menu_Pelayan1")
-        Me.relationfk_Pelayan_has_Pemesanan_Pelayan1 = Me.Relations("fk_Pelayan_has_Pemesanan_Pelayan1")
-        Me.relationfk_Pelayan_has_Pemesanan_Pemesanan1 = Me.Relations("fk_Pelayan_has_Pemesanan_Pemesanan1")
-        Me.relationfk_Pemesanan_Kasir1 = Me.Relations("fk_Pemesanan_Kasir1")
-        Me.relationfk_Pemesanan_Menu = Me.Relations("fk_Pemesanan_Menu")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -321,20 +282,8 @@ Partial Public Class kel_5_si_restoDataSet
         MyBase.Tables.Add(Me.tablemenu)
         Me.tablepelayan = New pelayanDataTable()
         MyBase.Tables.Add(Me.tablepelayan)
-        Me.tablepelayan_has_pemesanan = New pelayan_has_pemesananDataTable()
-        MyBase.Tables.Add(Me.tablepelayan_has_pemesanan)
         Me.tablepemesanan = New pemesananDataTable()
         MyBase.Tables.Add(Me.tablepemesanan)
-        Me.relationfk_Menu_Pelayan1 = New Global.System.Data.DataRelation("fk_Menu_Pelayan1", New Global.System.Data.DataColumn() {Me.tablepelayan.Id_PelayanColumn}, New Global.System.Data.DataColumn() {Me.tablemenu.Pelayan_Id_PelayanColumn}, false)
-        Me.Relations.Add(Me.relationfk_Menu_Pelayan1)
-        Me.relationfk_Pelayan_has_Pemesanan_Pelayan1 = New Global.System.Data.DataRelation("fk_Pelayan_has_Pemesanan_Pelayan1", New Global.System.Data.DataColumn() {Me.tablepelayan.Id_PelayanColumn}, New Global.System.Data.DataColumn() {Me.tablepelayan_has_pemesanan.Pelayan_Id_PelayanColumn}, false)
-        Me.Relations.Add(Me.relationfk_Pelayan_has_Pemesanan_Pelayan1)
-        Me.relationfk_Pelayan_has_Pemesanan_Pemesanan1 = New Global.System.Data.DataRelation("fk_Pelayan_has_Pemesanan_Pemesanan1", New Global.System.Data.DataColumn() {Me.tablepemesanan.Id_MejaColumn, Me.tablepemesanan.Menu_Id_MakananColumn, Me.tablepemesanan.Kasir_Id_MejaColumn, Me.tablepemesanan.Pelayan_Id_PelayanColumn}, New Global.System.Data.DataColumn() {Me.tablepelayan_has_pemesanan.Pemesanan_Id_MejaColumn, Me.tablepelayan_has_pemesanan.Pemesanan_Menu_Id_MakananColumn, Me.tablepelayan_has_pemesanan.Pemesanan_Kasir_Id_MejaColumn, Me.tablepelayan_has_pemesanan.Pemesanan_Pelayan_Id_PelayanColumn}, false)
-        Me.Relations.Add(Me.relationfk_Pelayan_has_Pemesanan_Pemesanan1)
-        Me.relationfk_Pemesanan_Kasir1 = New Global.System.Data.DataRelation("fk_Pemesanan_Kasir1", New Global.System.Data.DataColumn() {Me.tablekasir.Id_MejaColumn}, New Global.System.Data.DataColumn() {Me.tablepemesanan.Kasir_Id_MejaColumn}, false)
-        Me.Relations.Add(Me.relationfk_Pemesanan_Kasir1)
-        Me.relationfk_Pemesanan_Menu = New Global.System.Data.DataRelation("fk_Pemesanan_Menu", New Global.System.Data.DataColumn() {Me.tablemenu.Id_MakananColumn}, New Global.System.Data.DataColumn() {Me.tablepemesanan.Menu_Id_MakananColumn}, false)
-        Me.Relations.Add(Me.relationfk_Pemesanan_Menu)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -352,12 +301,6 @@ Partial Public Class kel_5_si_restoDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializepelayan() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializepelayan_has_pemesanan() As Boolean
         Return false
     End Function
     
@@ -435,9 +378,6 @@ Partial Public Class kel_5_si_restoDataSet
     Public Delegate Sub pelayanRowChangeEventHandler(ByVal sender As Object, ByVal e As pelayanRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub pelayan_has_pemesananRowChangeEventHandler(ByVal sender As Object, ByVal e As pelayan_has_pemesananRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub pemesananRowChangeEventHandler(ByVal sender As Object, ByVal e As pemesananRowChangeEvent)
     
     '''<summary>
@@ -448,15 +388,15 @@ Partial Public Class kel_5_si_restoDataSet
     Partial Public Class kasirDataTable
         Inherits Global.System.Data.TypedTableBase(Of kasirRow)
         
-        Private columnId_Meja As Global.System.Data.DataColumn
+        Private columnid_meja As Global.System.Data.DataColumn
         
-        Private columnNama_Makanan As Global.System.Data.DataColumn
+        Private columnnama_makanan As Global.System.Data.DataColumn
         
-        Private columnHarga_Makanan As Global.System.Data.DataColumn
+        Private columnharga_makanan As Global.System.Data.DataColumn
         
-        Private columnJumlah_Pesanan As Global.System.Data.DataColumn
+        Private columnjumlah_pesanan As Global.System.Data.DataColumn
         
-        Private columnTotal_Pembayaran As Global.System.Data.DataColumn
+        Private columntotal_pembayaran As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -495,41 +435,41 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Id_MejaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property id_mejaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnId_Meja
+                Return Me.columnid_meja
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Nama_MakananColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property nama_makananColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNama_Makanan
+                Return Me.columnnama_makanan
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Harga_MakananColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property harga_makananColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnHarga_Makanan
+                Return Me.columnharga_makanan
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Jumlah_PesananColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property jumlah_pesananColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnJumlah_Pesanan
+                Return Me.columnjumlah_pesanan
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Total_PembayaranColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property total_pembayaranColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnTotal_Pembayaran
+                Return Me.columntotal_pembayaran
             End Get
         End Property
         
@@ -570,9 +510,9 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddkasirRow(ByVal Id_Meja As Integer, ByVal Nama_Makanan As String, ByVal Harga_Makanan As String, ByVal Jumlah_Pesanan As Integer, ByVal Total_Pembayaran As Integer) As kasirRow
+        Public Overloads Function AddkasirRow(ByVal id_meja As Integer, ByVal nama_makanan As String, ByVal harga_makanan As String, ByVal jumlah_pesanan As Integer, ByVal total_pembayaran As Integer) As kasirRow
             Dim rowkasirRow As kasirRow = CType(Me.NewRow,kasirRow)
-            Dim columnValuesArray() As Object = New Object() {Id_Meja, Nama_Makanan, Harga_Makanan, Jumlah_Pesanan, Total_Pembayaran}
+            Dim columnValuesArray() As Object = New Object() {id_meja, nama_makanan, harga_makanan, jumlah_pesanan, total_pembayaran}
             rowkasirRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowkasirRow)
             Return rowkasirRow
@@ -580,8 +520,8 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindById_Meja(ByVal Id_Meja As Integer) As kasirRow
-            Return CType(Me.Rows.Find(New Object() {Id_Meja}),kasirRow)
+        Public Function FindByid_meja(ByVal id_meja As Integer) As kasirRow
+            Return CType(Me.Rows.Find(New Object() {id_meja}),kasirRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -601,31 +541,31 @@ Partial Public Class kel_5_si_restoDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnId_Meja = MyBase.Columns("Id Meja")
-            Me.columnNama_Makanan = MyBase.Columns("Nama Makanan")
-            Me.columnHarga_Makanan = MyBase.Columns("Harga Makanan")
-            Me.columnJumlah_Pesanan = MyBase.Columns("Jumlah Pesanan")
-            Me.columnTotal_Pembayaran = MyBase.Columns("Total Pembayaran")
+            Me.columnid_meja = MyBase.Columns("id_meja")
+            Me.columnnama_makanan = MyBase.Columns("nama_makanan")
+            Me.columnharga_makanan = MyBase.Columns("harga_makanan")
+            Me.columnjumlah_pesanan = MyBase.Columns("jumlah_pesanan")
+            Me.columntotal_pembayaran = MyBase.Columns("total_pembayaran")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnId_Meja = New Global.System.Data.DataColumn("Id Meja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnId_Meja)
-            Me.columnNama_Makanan = New Global.System.Data.DataColumn("Nama Makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNama_Makanan)
-            Me.columnHarga_Makanan = New Global.System.Data.DataColumn("Harga Makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnHarga_Makanan)
-            Me.columnJumlah_Pesanan = New Global.System.Data.DataColumn("Jumlah Pesanan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnJumlah_Pesanan)
-            Me.columnTotal_Pembayaran = New Global.System.Data.DataColumn("Total Pembayaran", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTotal_Pembayaran)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_Meja}, true))
-            Me.columnId_Meja.AllowDBNull = false
-            Me.columnId_Meja.Unique = true
-            Me.columnNama_Makanan.MaxLength = 45
-            Me.columnHarga_Makanan.MaxLength = 45
+            Me.columnid_meja = New Global.System.Data.DataColumn("id_meja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_meja)
+            Me.columnnama_makanan = New Global.System.Data.DataColumn("nama_makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_makanan)
+            Me.columnharga_makanan = New Global.System.Data.DataColumn("harga_makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnharga_makanan)
+            Me.columnjumlah_pesanan = New Global.System.Data.DataColumn("jumlah_pesanan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnjumlah_pesanan)
+            Me.columntotal_pembayaran = New Global.System.Data.DataColumn("total_pembayaran", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal_pembayaran)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_meja}, true))
+            Me.columnid_meja.AllowDBNull = false
+            Me.columnid_meja.Unique = true
+            Me.columnnama_makanan.MaxLength = 45
+            Me.columnharga_makanan.MaxLength = 45
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -763,13 +703,11 @@ Partial Public Class kel_5_si_restoDataSet
     Partial Public Class menuDataTable
         Inherits Global.System.Data.TypedTableBase(Of menuRow)
         
-        Private columnId_Makanan As Global.System.Data.DataColumn
+        Private columnid As Global.System.Data.DataColumn
         
-        Private columnNama_Makanan As Global.System.Data.DataColumn
+        Private columnnama_makanan As Global.System.Data.DataColumn
         
-        Private columnHarga_Makanan As Global.System.Data.DataColumn
-        
-        Private columnPelayan_Id_Pelayan As Global.System.Data.DataColumn
+        Private columnharga_makanan As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -808,33 +746,25 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Id_MakananColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property idColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnId_Makanan
+                Return Me.columnid
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Nama_MakananColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property nama_makananColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNama_Makanan
+                Return Me.columnnama_makanan
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Harga_MakananColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property harga_makananColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnHarga_Makanan
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Pelayan_Id_PelayanColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPelayan_Id_Pelayan
+                Return Me.columnharga_makanan
             End Get
         End Property
         
@@ -875,12 +805,9 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddmenuRow(ByVal Id_Makanan As Integer, ByVal Nama_Makanan As String, ByVal Harga_Makanan As String, ByVal parentpelayanRowByfk_Menu_Pelayan1 As pelayanRow) As menuRow
+        Public Overloads Function AddmenuRow(ByVal id As Integer, ByVal nama_makanan As String, ByVal harga_makanan As String) As menuRow
             Dim rowmenuRow As menuRow = CType(Me.NewRow,menuRow)
-            Dim columnValuesArray() As Object = New Object() {Id_Makanan, Nama_Makanan, Harga_Makanan, Nothing}
-            If (Not (parentpelayanRowByfk_Menu_Pelayan1) Is Nothing) Then
-                columnValuesArray(3) = parentpelayanRowByfk_Menu_Pelayan1(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {id, nama_makanan, harga_makanan}
             rowmenuRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowmenuRow)
             Return rowmenuRow
@@ -888,8 +815,8 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindById_MakananPelayan_Id_Pelayan(ByVal Id_Makanan As Integer, ByVal Pelayan_Id_Pelayan As Integer) As menuRow
-            Return CType(Me.Rows.Find(New Object() {Id_Makanan, Pelayan_Id_Pelayan}),menuRow)
+        Public Function FindByid(ByVal id As Integer) As menuRow
+            Return CType(Me.Rows.Find(New Object() {id}),menuRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -909,28 +836,25 @@ Partial Public Class kel_5_si_restoDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnId_Makanan = MyBase.Columns("Id Makanan")
-            Me.columnNama_Makanan = MyBase.Columns("Nama Makanan")
-            Me.columnHarga_Makanan = MyBase.Columns("Harga Makanan")
-            Me.columnPelayan_Id_Pelayan = MyBase.Columns("Pelayan_Id Pelayan")
+            Me.columnid = MyBase.Columns("id")
+            Me.columnnama_makanan = MyBase.Columns("nama_makanan")
+            Me.columnharga_makanan = MyBase.Columns("harga_makanan")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnId_Makanan = New Global.System.Data.DataColumn("Id Makanan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnId_Makanan)
-            Me.columnNama_Makanan = New Global.System.Data.DataColumn("Nama Makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNama_Makanan)
-            Me.columnHarga_Makanan = New Global.System.Data.DataColumn("Harga Makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnHarga_Makanan)
-            Me.columnPelayan_Id_Pelayan = New Global.System.Data.DataColumn("Pelayan_Id Pelayan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPelayan_Id_Pelayan)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_Makanan, Me.columnPelayan_Id_Pelayan}, true))
-            Me.columnId_Makanan.AllowDBNull = false
-            Me.columnNama_Makanan.MaxLength = 45
-            Me.columnHarga_Makanan.MaxLength = 45
-            Me.columnPelayan_Id_Pelayan.AllowDBNull = false
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid)
+            Me.columnnama_makanan = New Global.System.Data.DataColumn("nama_makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_makanan)
+            Me.columnharga_makanan = New Global.System.Data.DataColumn("harga_makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnharga_makanan)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
+            Me.columnid.AllowDBNull = false
+            Me.columnid.Unique = true
+            Me.columnnama_makanan.MaxLength = 45
+            Me.columnharga_makanan.MaxLength = 45
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1068,9 +992,9 @@ Partial Public Class kel_5_si_restoDataSet
     Partial Public Class pelayanDataTable
         Inherits Global.System.Data.TypedTableBase(Of pelayanRow)
         
-        Private columnId_Pelayan As Global.System.Data.DataColumn
+        Private columnid_pelayan As Global.System.Data.DataColumn
         
-        Private columnNama_Pelayan As Global.System.Data.DataColumn
+        Private columnnama_pelayan As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1109,17 +1033,17 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Id_PelayanColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property id_pelayanColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnId_Pelayan
+                Return Me.columnid_pelayan
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Nama_PelayanColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property nama_pelayanColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNama_Pelayan
+                Return Me.columnnama_pelayan
             End Get
         End Property
         
@@ -1160,9 +1084,9 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddpelayanRow(ByVal Id_Pelayan As Integer, ByVal Nama_Pelayan As String) As pelayanRow
+        Public Overloads Function AddpelayanRow(ByVal id_pelayan As Integer, ByVal nama_pelayan As String) As pelayanRow
             Dim rowpelayanRow As pelayanRow = CType(Me.NewRow,pelayanRow)
-            Dim columnValuesArray() As Object = New Object() {Id_Pelayan, Nama_Pelayan}
+            Dim columnValuesArray() As Object = New Object() {id_pelayan, nama_pelayan}
             rowpelayanRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowpelayanRow)
             Return rowpelayanRow
@@ -1170,8 +1094,8 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindById_Pelayan(ByVal Id_Pelayan As Integer) As pelayanRow
-            Return CType(Me.Rows.Find(New Object() {Id_Pelayan}),pelayanRow)
+        Public Function FindByid_pelayan(ByVal id_pelayan As Integer) As pelayanRow
+            Return CType(Me.Rows.Find(New Object() {id_pelayan}),pelayanRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1191,21 +1115,21 @@ Partial Public Class kel_5_si_restoDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnId_Pelayan = MyBase.Columns("Id Pelayan")
-            Me.columnNama_Pelayan = MyBase.Columns("Nama Pelayan")
+            Me.columnid_pelayan = MyBase.Columns("id_pelayan")
+            Me.columnnama_pelayan = MyBase.Columns("nama_pelayan")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnId_Pelayan = New Global.System.Data.DataColumn("Id Pelayan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnId_Pelayan)
-            Me.columnNama_Pelayan = New Global.System.Data.DataColumn("Nama Pelayan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNama_Pelayan)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_Pelayan}, true))
-            Me.columnId_Pelayan.AllowDBNull = false
-            Me.columnId_Pelayan.Unique = true
-            Me.columnNama_Pelayan.MaxLength = 45
+            Me.columnid_pelayan = New Global.System.Data.DataColumn("id_pelayan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_pelayan)
+            Me.columnnama_pelayan = New Global.System.Data.DataColumn("nama_pelayan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_pelayan)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_pelayan}, true))
+            Me.columnid_pelayan.AllowDBNull = false
+            Me.columnid_pelayan.Unique = true
+            Me.columnnama_pelayan.MaxLength = 40
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1340,341 +1264,16 @@ Partial Public Class kel_5_si_restoDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class pelayan_has_pemesananDataTable
-        Inherits Global.System.Data.TypedTableBase(Of pelayan_has_pemesananRow)
-        
-        Private columnPelayan_Id_Pelayan As Global.System.Data.DataColumn
-        
-        Private columnPemesanan_Id_Meja As Global.System.Data.DataColumn
-        
-        Private columnPemesanan_Menu_Id_Makanan As Global.System.Data.DataColumn
-        
-        Private columnPemesanan_Kasir_Id_Meja As Global.System.Data.DataColumn
-        
-        Private columnPemesanan_Pelayan_Id_Pelayan As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "pelayan_has_pemesanan"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Pelayan_Id_PelayanColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPelayan_Id_Pelayan
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Pemesanan_Id_MejaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPemesanan_Id_Meja
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Pemesanan_Menu_Id_MakananColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPemesanan_Menu_Id_Makanan
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Pemesanan_Kasir_Id_MejaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPemesanan_Kasir_Id_Meja
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Pemesanan_Pelayan_Id_PelayanColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPemesanan_Pelayan_Id_Pelayan
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As pelayan_has_pemesananRow
-            Get
-                Return CType(Me.Rows(index),pelayan_has_pemesananRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event pelayan_has_pemesananRowChanging As pelayan_has_pemesananRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event pelayan_has_pemesananRowChanged As pelayan_has_pemesananRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event pelayan_has_pemesananRowDeleting As pelayan_has_pemesananRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event pelayan_has_pemesananRowDeleted As pelayan_has_pemesananRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub Addpelayan_has_pemesananRow(ByVal row As pelayan_has_pemesananRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addpelayan_has_pemesananRow(ByVal parentpelayanRowByfk_Pelayan_has_Pemesanan_Pelayan1 As pelayanRow, ByVal Pemesanan_Id_Meja As Integer, ByVal Pemesanan_Menu_Id_Makanan As Integer, ByVal Pemesanan_Kasir_Id_Meja As Integer, ByVal Pemesanan_Pelayan_Id_Pelayan As Integer) As pelayan_has_pemesananRow
-            Dim rowpelayan_has_pemesananRow As pelayan_has_pemesananRow = CType(Me.NewRow,pelayan_has_pemesananRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Pemesanan_Id_Meja, Pemesanan_Menu_Id_Makanan, Pemesanan_Kasir_Id_Meja, Pemesanan_Pelayan_Id_Pelayan}
-            If (Not (parentpelayanRowByfk_Pelayan_has_Pemesanan_Pelayan1) Is Nothing) Then
-                columnValuesArray(0) = parentpelayanRowByfk_Pelayan_has_Pemesanan_Pelayan1(0)
-            End If
-            rowpelayan_has_pemesananRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowpelayan_has_pemesananRow)
-            Return rowpelayan_has_pemesananRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByPelayan_Id_PelayanPemesanan_Id_MejaPemesanan_Menu_Id_MakananPemesanan_Kasir_Id_MejaPemesanan_Pelayan_Id_Pelayan(ByVal Pelayan_Id_Pelayan As Integer, ByVal Pemesanan_Id_Meja As Integer, ByVal Pemesanan_Menu_Id_Makanan As Integer, ByVal Pemesanan_Kasir_Id_Meja As Integer, ByVal Pemesanan_Pelayan_Id_Pelayan As Integer) As pelayan_has_pemesananRow
-            Return CType(Me.Rows.Find(New Object() {Pelayan_Id_Pelayan, Pemesanan_Id_Meja, Pemesanan_Menu_Id_Makanan, Pemesanan_Kasir_Id_Meja, Pemesanan_Pelayan_Id_Pelayan}),pelayan_has_pemesananRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As pelayan_has_pemesananDataTable = CType(MyBase.Clone,pelayan_has_pemesananDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New pelayan_has_pemesananDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnPelayan_Id_Pelayan = MyBase.Columns("Pelayan_Id Pelayan")
-            Me.columnPemesanan_Id_Meja = MyBase.Columns("Pemesanan_Id Meja")
-            Me.columnPemesanan_Menu_Id_Makanan = MyBase.Columns("Pemesanan_Menu_Id Makanan")
-            Me.columnPemesanan_Kasir_Id_Meja = MyBase.Columns("Pemesanan_Kasir_Id Meja")
-            Me.columnPemesanan_Pelayan_Id_Pelayan = MyBase.Columns("Pemesanan_Pelayan_Id Pelayan")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnPelayan_Id_Pelayan = New Global.System.Data.DataColumn("Pelayan_Id Pelayan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPelayan_Id_Pelayan)
-            Me.columnPemesanan_Id_Meja = New Global.System.Data.DataColumn("Pemesanan_Id Meja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPemesanan_Id_Meja)
-            Me.columnPemesanan_Menu_Id_Makanan = New Global.System.Data.DataColumn("Pemesanan_Menu_Id Makanan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPemesanan_Menu_Id_Makanan)
-            Me.columnPemesanan_Kasir_Id_Meja = New Global.System.Data.DataColumn("Pemesanan_Kasir_Id Meja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPemesanan_Kasir_Id_Meja)
-            Me.columnPemesanan_Pelayan_Id_Pelayan = New Global.System.Data.DataColumn("Pemesanan_Pelayan_Id Pelayan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPemesanan_Pelayan_Id_Pelayan)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnPelayan_Id_Pelayan, Me.columnPemesanan_Id_Meja, Me.columnPemesanan_Menu_Id_Makanan, Me.columnPemesanan_Kasir_Id_Meja, Me.columnPemesanan_Pelayan_Id_Pelayan}, true))
-            Me.columnPelayan_Id_Pelayan.AllowDBNull = false
-            Me.columnPemesanan_Id_Meja.AllowDBNull = false
-            Me.columnPemesanan_Menu_Id_Makanan.AllowDBNull = false
-            Me.columnPemesanan_Kasir_Id_Meja.AllowDBNull = false
-            Me.columnPemesanan_Pelayan_Id_Pelayan.AllowDBNull = false
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Newpelayan_has_pemesananRow() As pelayan_has_pemesananRow
-            Return CType(Me.NewRow,pelayan_has_pemesananRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New pelayan_has_pemesananRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(pelayan_has_pemesananRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.pelayan_has_pemesananRowChangedEvent) Is Nothing) Then
-                RaiseEvent pelayan_has_pemesananRowChanged(Me, New pelayan_has_pemesananRowChangeEvent(CType(e.Row,pelayan_has_pemesananRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.pelayan_has_pemesananRowChangingEvent) Is Nothing) Then
-                RaiseEvent pelayan_has_pemesananRowChanging(Me, New pelayan_has_pemesananRowChangeEvent(CType(e.Row,pelayan_has_pemesananRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.pelayan_has_pemesananRowDeletedEvent) Is Nothing) Then
-                RaiseEvent pelayan_has_pemesananRowDeleted(Me, New pelayan_has_pemesananRowChangeEvent(CType(e.Row,pelayan_has_pemesananRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.pelayan_has_pemesananRowDeletingEvent) Is Nothing) Then
-                RaiseEvent pelayan_has_pemesananRowDeleting(Me, New pelayan_has_pemesananRowChangeEvent(CType(e.Row,pelayan_has_pemesananRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Removepelayan_has_pemesananRow(ByVal row As pelayan_has_pemesananRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As kel_5_si_restoDataSet = New kel_5_si_restoDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "pelayan_has_pemesananDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class pemesananDataTable
         Inherits Global.System.Data.TypedTableBase(Of pemesananRow)
         
-        Private columnId_Meja As Global.System.Data.DataColumn
+        Private columnid_meja As Global.System.Data.DataColumn
         
-        Private columnNama_Makanan As Global.System.Data.DataColumn
+        Private columnnama_makanan As Global.System.Data.DataColumn
         
-        Private columnJumlah_Pesanan As Global.System.Data.DataColumn
+        Private columnjumlah_pesanan As Global.System.Data.DataColumn
         
-        Private columnMenu_Tambahan As Global.System.Data.DataColumn
-        
-        Private columnMenu_Id_Makanan As Global.System.Data.DataColumn
-        
-        Private columnKasir_Id_Meja As Global.System.Data.DataColumn
-        
-        Private columnPelayan_Id_Pelayan As Global.System.Data.DataColumn
+        Private columnmenu_tambahan As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1713,57 +1312,33 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Id_MejaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property id_mejaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnId_Meja
+                Return Me.columnid_meja
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Nama_MakananColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property nama_makananColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNama_Makanan
+                Return Me.columnnama_makanan
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Jumlah_PesananColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property jumlah_pesananColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnJumlah_Pesanan
+                Return Me.columnjumlah_pesanan
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Menu_TambahanColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property menu_tambahanColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnMenu_Tambahan
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Menu_Id_MakananColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnMenu_Id_Makanan
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Kasir_Id_MejaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnKasir_Id_Meja
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Pelayan_Id_PelayanColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPelayan_Id_Pelayan
+                Return Me.columnmenu_tambahan
             End Get
         End Property
         
@@ -1804,24 +1379,12 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddpemesananRow(ByVal Id_Meja As Integer, ByVal Nama_Makanan As String, ByVal Jumlah_Pesanan As Integer, ByVal Menu_Tambahan As String, ByVal parentmenuRowByfk_Pemesanan_Menu As menuRow, ByVal parentkasirRowByfk_Pemesanan_Kasir1 As kasirRow, ByVal Pelayan_Id_Pelayan As Integer) As pemesananRow
+        Public Overloads Function AddpemesananRow(ByVal id_meja As Integer, ByVal nama_makanan As String, ByVal jumlah_pesanan As Integer, ByVal menu_tambahan As String) As pemesananRow
             Dim rowpemesananRow As pemesananRow = CType(Me.NewRow,pemesananRow)
-            Dim columnValuesArray() As Object = New Object() {Id_Meja, Nama_Makanan, Jumlah_Pesanan, Menu_Tambahan, Nothing, Nothing, Pelayan_Id_Pelayan}
-            If (Not (parentmenuRowByfk_Pemesanan_Menu) Is Nothing) Then
-                columnValuesArray(4) = parentmenuRowByfk_Pemesanan_Menu(0)
-            End If
-            If (Not (parentkasirRowByfk_Pemesanan_Kasir1) Is Nothing) Then
-                columnValuesArray(5) = parentkasirRowByfk_Pemesanan_Kasir1(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {id_meja, nama_makanan, jumlah_pesanan, menu_tambahan}
             rowpemesananRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowpemesananRow)
             Return rowpemesananRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindById_MejaMenu_Id_MakananKasir_Id_MejaPelayan_Id_Pelayan(ByVal Id_Meja As Integer, ByVal Menu_Id_Makanan As Integer, ByVal Kasir_Id_Meja As Integer, ByVal Pelayan_Id_Pelayan As Integer) As pemesananRow
-            Return CType(Me.Rows.Find(New Object() {Id_Meja, Menu_Id_Makanan, Kasir_Id_Meja, Pelayan_Id_Pelayan}),pemesananRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1841,39 +1404,25 @@ Partial Public Class kel_5_si_restoDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnId_Meja = MyBase.Columns("Id Meja")
-            Me.columnNama_Makanan = MyBase.Columns("Nama Makanan")
-            Me.columnJumlah_Pesanan = MyBase.Columns("Jumlah Pesanan")
-            Me.columnMenu_Tambahan = MyBase.Columns("Menu Tambahan")
-            Me.columnMenu_Id_Makanan = MyBase.Columns("Menu_Id Makanan")
-            Me.columnKasir_Id_Meja = MyBase.Columns("Kasir_Id Meja")
-            Me.columnPelayan_Id_Pelayan = MyBase.Columns("Pelayan_Id Pelayan")
+            Me.columnid_meja = MyBase.Columns("id_meja")
+            Me.columnnama_makanan = MyBase.Columns("nama_makanan")
+            Me.columnjumlah_pesanan = MyBase.Columns("jumlah_pesanan")
+            Me.columnmenu_tambahan = MyBase.Columns("menu_tambahan")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnId_Meja = New Global.System.Data.DataColumn("Id Meja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnId_Meja)
-            Me.columnNama_Makanan = New Global.System.Data.DataColumn("Nama Makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNama_Makanan)
-            Me.columnJumlah_Pesanan = New Global.System.Data.DataColumn("Jumlah Pesanan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnJumlah_Pesanan)
-            Me.columnMenu_Tambahan = New Global.System.Data.DataColumn("Menu Tambahan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnMenu_Tambahan)
-            Me.columnMenu_Id_Makanan = New Global.System.Data.DataColumn("Menu_Id Makanan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnMenu_Id_Makanan)
-            Me.columnKasir_Id_Meja = New Global.System.Data.DataColumn("Kasir_Id Meja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnKasir_Id_Meja)
-            Me.columnPelayan_Id_Pelayan = New Global.System.Data.DataColumn("Pelayan_Id Pelayan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPelayan_Id_Pelayan)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_Meja, Me.columnMenu_Id_Makanan, Me.columnKasir_Id_Meja, Me.columnPelayan_Id_Pelayan}, true))
-            Me.columnId_Meja.AllowDBNull = false
-            Me.columnNama_Makanan.MaxLength = 45
-            Me.columnMenu_Tambahan.MaxLength = 45
-            Me.columnMenu_Id_Makanan.AllowDBNull = false
-            Me.columnKasir_Id_Meja.AllowDBNull = false
-            Me.columnPelayan_Id_Pelayan.AllowDBNull = false
+            Me.columnid_meja = New Global.System.Data.DataColumn("id_meja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_meja)
+            Me.columnnama_makanan = New Global.System.Data.DataColumn("nama_makanan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_makanan)
+            Me.columnjumlah_pesanan = New Global.System.Data.DataColumn("jumlah_pesanan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnjumlah_pesanan)
+            Me.columnmenu_tambahan = New Global.System.Data.DataColumn("menu_tambahan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnmenu_tambahan)
+            Me.columnnama_makanan.MaxLength = 45
+            Me.columnmenu_tambahan.MaxLength = 45
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2020,132 +1569,122 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Id_Meja() As Integer
+        Public Property id_meja() As Integer
             Get
-                Return CType(Me(Me.tablekasir.Id_MejaColumn),Integer)
+                Return CType(Me(Me.tablekasir.id_mejaColumn),Integer)
             End Get
             Set
-                Me(Me.tablekasir.Id_MejaColumn) = value
+                Me(Me.tablekasir.id_mejaColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Nama_Makanan() As String
+        Public Property nama_makanan() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablekasir.Nama_MakananColumn),String)
+                    Return CType(Me(Me.tablekasir.nama_makananColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Nama Makanan' in table 'kasir' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_makanan' in table 'kasir' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablekasir.Nama_MakananColumn) = value
+                Me(Me.tablekasir.nama_makananColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Harga_Makanan() As String
+        Public Property harga_makanan() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablekasir.Harga_MakananColumn),String)
+                    Return CType(Me(Me.tablekasir.harga_makananColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Harga Makanan' in table 'kasir' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'harga_makanan' in table 'kasir' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablekasir.Harga_MakananColumn) = value
+                Me(Me.tablekasir.harga_makananColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Jumlah_Pesanan() As Integer
+        Public Property jumlah_pesanan() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablekasir.Jumlah_PesananColumn),Integer)
+                    Return CType(Me(Me.tablekasir.jumlah_pesananColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Jumlah Pesanan' in table 'kasir' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'jumlah_pesanan' in table 'kasir' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablekasir.Jumlah_PesananColumn) = value
+                Me(Me.tablekasir.jumlah_pesananColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Total_Pembayaran() As Integer
+        Public Property total_pembayaran() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablekasir.Total_PembayaranColumn),Integer)
+                    Return CType(Me(Me.tablekasir.total_pembayaranColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Total Pembayaran' in table 'kasir' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total_pembayaran' in table 'kasir' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablekasir.Total_PembayaranColumn) = value
+                Me(Me.tablekasir.total_pembayaranColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNama_MakananNull() As Boolean
-            Return Me.IsNull(Me.tablekasir.Nama_MakananColumn)
+        Public Function Isnama_makananNull() As Boolean
+            Return Me.IsNull(Me.tablekasir.nama_makananColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNama_MakananNull()
-            Me(Me.tablekasir.Nama_MakananColumn) = Global.System.Convert.DBNull
+        Public Sub Setnama_makananNull()
+            Me(Me.tablekasir.nama_makananColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsHarga_MakananNull() As Boolean
-            Return Me.IsNull(Me.tablekasir.Harga_MakananColumn)
+        Public Function Isharga_makananNull() As Boolean
+            Return Me.IsNull(Me.tablekasir.harga_makananColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetHarga_MakananNull()
-            Me(Me.tablekasir.Harga_MakananColumn) = Global.System.Convert.DBNull
+        Public Sub Setharga_makananNull()
+            Me(Me.tablekasir.harga_makananColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsJumlah_PesananNull() As Boolean
-            Return Me.IsNull(Me.tablekasir.Jumlah_PesananColumn)
+        Public Function Isjumlah_pesananNull() As Boolean
+            Return Me.IsNull(Me.tablekasir.jumlah_pesananColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetJumlah_PesananNull()
-            Me(Me.tablekasir.Jumlah_PesananColumn) = Global.System.Convert.DBNull
+        Public Sub Setjumlah_pesananNull()
+            Me(Me.tablekasir.jumlah_pesananColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsTotal_PembayaranNull() As Boolean
-            Return Me.IsNull(Me.tablekasir.Total_PembayaranColumn)
+        Public Function Istotal_pembayaranNull() As Boolean
+            Return Me.IsNull(Me.tablekasir.total_pembayaranColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetTotal_PembayaranNull()
-            Me(Me.tablekasir.Total_PembayaranColumn) = Global.System.Convert.DBNull
+        Public Sub Settotal_pembayaranNull()
+            Me(Me.tablekasir.total_pembayaranColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetpemesananRows() As pemesananRow()
-            If (Me.Table.ChildRelations("fk_Pemesanan_Kasir1") Is Nothing) Then
-                Return New pemesananRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_Pemesanan_Kasir1")),pemesananRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -2165,100 +1704,68 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Id_Makanan() As Integer
+        Public Property id() As Integer
             Get
-                Return CType(Me(Me.tablemenu.Id_MakananColumn),Integer)
+                Return CType(Me(Me.tablemenu.idColumn),Integer)
             End Get
             Set
-                Me(Me.tablemenu.Id_MakananColumn) = value
+                Me(Me.tablemenu.idColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Nama_Makanan() As String
+        Public Property nama_makanan() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablemenu.Nama_MakananColumn),String)
+                    Return CType(Me(Me.tablemenu.nama_makananColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Nama Makanan' in table 'menu' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_makanan' in table 'menu' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablemenu.Nama_MakananColumn) = value
+                Me(Me.tablemenu.nama_makananColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Harga_Makanan() As String
+        Public Property harga_makanan() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablemenu.Harga_MakananColumn),String)
+                    Return CType(Me(Me.tablemenu.harga_makananColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Harga Makanan' in table 'menu' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'harga_makanan' in table 'menu' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablemenu.Harga_MakananColumn) = value
+                Me(Me.tablemenu.harga_makananColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Pelayan_Id_Pelayan() As Integer
-            Get
-                Return CType(Me(Me.tablemenu.Pelayan_Id_PelayanColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablemenu.Pelayan_Id_PelayanColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property pelayanRow() As pelayanRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_Menu_Pelayan1")),pelayanRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("fk_Menu_Pelayan1"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNama_MakananNull() As Boolean
-            Return Me.IsNull(Me.tablemenu.Nama_MakananColumn)
+        Public Function Isnama_makananNull() As Boolean
+            Return Me.IsNull(Me.tablemenu.nama_makananColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNama_MakananNull()
-            Me(Me.tablemenu.Nama_MakananColumn) = Global.System.Convert.DBNull
+        Public Sub Setnama_makananNull()
+            Me(Me.tablemenu.nama_makananColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsHarga_MakananNull() As Boolean
-            Return Me.IsNull(Me.tablemenu.Harga_MakananColumn)
+        Public Function Isharga_makananNull() As Boolean
+            Return Me.IsNull(Me.tablemenu.harga_makananColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetHarga_MakananNull()
-            Me(Me.tablemenu.Harga_MakananColumn) = Global.System.Convert.DBNull
+        Public Sub Setharga_makananNull()
+            Me(Me.tablemenu.harga_makananColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetpemesananRows() As pemesananRow()
-            If (Me.Table.ChildRelations("fk_Pemesanan_Menu") Is Nothing) Then
-                Return New pemesananRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_Pemesanan_Menu")),pemesananRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -2278,154 +1785,41 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Id_Pelayan() As Integer
+        Public Property id_pelayan() As Integer
             Get
-                Return CType(Me(Me.tablepelayan.Id_PelayanColumn),Integer)
+                Return CType(Me(Me.tablepelayan.id_pelayanColumn),Integer)
             End Get
             Set
-                Me(Me.tablepelayan.Id_PelayanColumn) = value
+                Me(Me.tablepelayan.id_pelayanColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Nama_Pelayan() As String
+        Public Property nama_pelayan() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablepelayan.Nama_PelayanColumn),String)
+                    Return CType(Me(Me.tablepelayan.nama_pelayanColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Nama Pelayan' in table 'pelayan' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_pelayan' in table 'pelayan' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablepelayan.Nama_PelayanColumn) = value
+                Me(Me.tablepelayan.nama_pelayanColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNama_PelayanNull() As Boolean
-            Return Me.IsNull(Me.tablepelayan.Nama_PelayanColumn)
+        Public Function Isnama_pelayanNull() As Boolean
+            Return Me.IsNull(Me.tablepelayan.nama_pelayanColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNama_PelayanNull()
-            Me(Me.tablepelayan.Nama_PelayanColumn) = Global.System.Convert.DBNull
+        Public Sub Setnama_pelayanNull()
+            Me(Me.tablepelayan.nama_pelayanColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetmenuRows() As menuRow()
-            If (Me.Table.ChildRelations("fk_Menu_Pelayan1") Is Nothing) Then
-                Return New menuRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_Menu_Pelayan1")),menuRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Getpelayan_has_pemesananRows() As pelayan_has_pemesananRow()
-            If (Me.Table.ChildRelations("fk_Pelayan_has_Pemesanan_Pelayan1") Is Nothing) Then
-                Return New pelayan_has_pemesananRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_Pelayan_has_Pemesanan_Pelayan1")),pelayan_has_pemesananRow())
-            End If
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class pelayan_has_pemesananRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tablepelayan_has_pemesanan As pelayan_has_pemesananDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tablepelayan_has_pemesanan = CType(Me.Table,pelayan_has_pemesananDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Pelayan_Id_Pelayan() As Integer
-            Get
-                Return CType(Me(Me.tablepelayan_has_pemesanan.Pelayan_Id_PelayanColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablepelayan_has_pemesanan.Pelayan_Id_PelayanColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Pemesanan_Id_Meja() As Integer
-            Get
-                Return CType(Me(Me.tablepelayan_has_pemesanan.Pemesanan_Id_MejaColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablepelayan_has_pemesanan.Pemesanan_Id_MejaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Pemesanan_Menu_Id_Makanan() As Integer
-            Get
-                Return CType(Me(Me.tablepelayan_has_pemesanan.Pemesanan_Menu_Id_MakananColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablepelayan_has_pemesanan.Pemesanan_Menu_Id_MakananColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Pemesanan_Kasir_Id_Meja() As Integer
-            Get
-                Return CType(Me(Me.tablepelayan_has_pemesanan.Pemesanan_Kasir_Id_MejaColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablepelayan_has_pemesanan.Pemesanan_Kasir_Id_MejaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Pemesanan_Pelayan_Id_Pelayan() As Integer
-            Get
-                Return CType(Me(Me.tablepelayan_has_pemesanan.Pemesanan_Pelayan_Id_PelayanColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablepelayan_has_pemesanan.Pemesanan_Pelayan_Id_PelayanColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property pelayanRow() As pelayanRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_Pelayan_has_Pemesanan_Pelayan1")),pelayanRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("fk_Pelayan_has_Pemesanan_Pelayan1"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property pemesananRowParent() As pemesananRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_Pelayan_has_Pemesanan_Pemesanan1")),pemesananRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("fk_Pelayan_has_Pemesanan_Pemesanan1"))
-            End Set
-        End Property
     End Class
     
     '''<summary>
@@ -2445,160 +1839,111 @@ Partial Public Class kel_5_si_restoDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Id_Meja() As Integer
-            Get
-                Return CType(Me(Me.tablepemesanan.Id_MejaColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablepemesanan.Id_MejaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Nama_Makanan() As String
+        Public Property id_meja() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablepemesanan.Nama_MakananColumn),String)
+                    Return CType(Me(Me.tablepemesanan.id_mejaColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Nama Makanan' in table 'pemesanan' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'id_meja' in table 'pemesanan' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablepemesanan.Nama_MakananColumn) = value
+                Me(Me.tablepemesanan.id_mejaColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Jumlah_Pesanan() As Integer
+        Public Property nama_makanan() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablepemesanan.Jumlah_PesananColumn),Integer)
+                    Return CType(Me(Me.tablepemesanan.nama_makananColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Jumlah Pesanan' in table 'pemesanan' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_makanan' in table 'pemesanan' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablepemesanan.Jumlah_PesananColumn) = value
+                Me(Me.tablepemesanan.nama_makananColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Menu_Tambahan() As String
+        Public Property jumlah_pesanan() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablepemesanan.Menu_TambahanColumn),String)
+                    Return CType(Me(Me.tablepemesanan.jumlah_pesananColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Menu Tambahan' in table 'pemesanan' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'jumlah_pesanan' in table 'pemesanan' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablepemesanan.Menu_TambahanColumn) = value
+                Me(Me.tablepemesanan.jumlah_pesananColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Menu_Id_Makanan() As Integer
+        Public Property menu_tambahan() As String
             Get
-                Return CType(Me(Me.tablepemesanan.Menu_Id_MakananColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablepemesanan.menu_tambahanColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'menu_tambahan' in table 'pemesanan' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tablepemesanan.Menu_Id_MakananColumn) = value
+                Me(Me.tablepemesanan.menu_tambahanColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Kasir_Id_Meja() As Integer
-            Get
-                Return CType(Me(Me.tablepemesanan.Kasir_Id_MejaColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablepemesanan.Kasir_Id_MejaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Pelayan_Id_Pelayan() As Integer
-            Get
-                Return CType(Me(Me.tablepemesanan.Pelayan_Id_PelayanColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablepemesanan.Pelayan_Id_PelayanColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property kasirRow() As kasirRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_Pemesanan_Kasir1")),kasirRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("fk_Pemesanan_Kasir1"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property menuRow() As menuRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_Pemesanan_Menu")),menuRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("fk_Pemesanan_Menu"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNama_MakananNull() As Boolean
-            Return Me.IsNull(Me.tablepemesanan.Nama_MakananColumn)
+        Public Function Isid_mejaNull() As Boolean
+            Return Me.IsNull(Me.tablepemesanan.id_mejaColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNama_MakananNull()
-            Me(Me.tablepemesanan.Nama_MakananColumn) = Global.System.Convert.DBNull
+        Public Sub Setid_mejaNull()
+            Me(Me.tablepemesanan.id_mejaColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsJumlah_PesananNull() As Boolean
-            Return Me.IsNull(Me.tablepemesanan.Jumlah_PesananColumn)
+        Public Function Isnama_makananNull() As Boolean
+            Return Me.IsNull(Me.tablepemesanan.nama_makananColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetJumlah_PesananNull()
-            Me(Me.tablepemesanan.Jumlah_PesananColumn) = Global.System.Convert.DBNull
+        Public Sub Setnama_makananNull()
+            Me(Me.tablepemesanan.nama_makananColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsMenu_TambahanNull() As Boolean
-            Return Me.IsNull(Me.tablepemesanan.Menu_TambahanColumn)
+        Public Function Isjumlah_pesananNull() As Boolean
+            Return Me.IsNull(Me.tablepemesanan.jumlah_pesananColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetMenu_TambahanNull()
-            Me(Me.tablepemesanan.Menu_TambahanColumn) = Global.System.Convert.DBNull
+        Public Sub Setjumlah_pesananNull()
+            Me(Me.tablepemesanan.jumlah_pesananColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Getpelayan_has_pemesananRows() As pelayan_has_pemesananRow()
-            If (Me.Table.ChildRelations("fk_Pelayan_has_Pemesanan_Pemesanan1") Is Nothing) Then
-                Return New pelayan_has_pemesananRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_Pelayan_has_Pemesanan_Pemesanan1")),pelayan_has_pemesananRow())
-            End If
+        Public Function Ismenu_tambahanNull() As Boolean
+            Return Me.IsNull(Me.tablepemesanan.menu_tambahanColumn)
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setmenu_tambahanNull()
+            Me(Me.tablepemesanan.menu_tambahanColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -2695,42 +2040,6 @@ Partial Public Class kel_5_si_restoDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As pelayanRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class pelayan_has_pemesananRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As pelayan_has_pemesananRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As pelayan_has_pemesananRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As pelayan_has_pemesananRow
             Get
                 Return Me.eventRow
             End Get
@@ -2911,18 +2220,18 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "kasir"
-            tableMapping.ColumnMappings.Add("Id Meja", "Id Meja")
-            tableMapping.ColumnMappings.Add("Nama Makanan", "Nama Makanan")
-            tableMapping.ColumnMappings.Add("Harga Makanan", "Harga Makanan")
-            tableMapping.ColumnMappings.Add("Jumlah Pesanan", "Jumlah Pesanan")
-            tableMapping.ColumnMappings.Add("Total Pembayaran", "Total Pembayaran")
+            tableMapping.ColumnMappings.Add("id_meja", "id_meja")
+            tableMapping.ColumnMappings.Add("nama_makanan", "nama_makanan")
+            tableMapping.ColumnMappings.Add("harga_makanan", "harga_makanan")
+            tableMapping.ColumnMappings.Add("jumlah_pesanan", "jumlah_pesanan")
+            tableMapping.ColumnMappings.Add("total_pembayaran", "total_pembayaran")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `kasir` WHERE ((`Id Meja` = @p1) AND ((@p2 = 1 AND `Nama Makanan` IS "& _ 
-                "NULL) OR (`Nama Makanan` = @p3)) AND ((@p4 = 1 AND `Harga Makanan` IS NULL) OR ("& _ 
-                "`Harga Makanan` = @p5)) AND ((@p6 = 1 AND `Jumlah Pesanan` IS NULL) OR (`Jumlah "& _ 
-                "Pesanan` = @p7)) AND ((@p8 = 1 AND `Total Pembayaran` IS NULL) OR (`Total Pembay"& _ 
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `kasir` WHERE ((`id_meja` = @p1) AND ((@p2 = 1 AND `nama_makanan` IS "& _ 
+                "NULL) OR (`nama_makanan` = @p3)) AND ((@p4 = 1 AND `harga_makanan` IS NULL) OR ("& _ 
+                "`harga_makanan` = @p5)) AND ((@p6 = 1 AND `jumlah_pesanan` IS NULL) OR (`jumlah_"& _ 
+                "pesanan` = @p7)) AND ((@p8 = 1 AND `total_pembayaran` IS NULL) OR (`total_pembay"& _ 
                 "aran` = @p9)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -2930,7 +2239,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Meja"
+            param.SourceColumn = "id_meja"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -2938,7 +2247,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -2947,7 +2256,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -2955,7 +2264,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
+            param.SourceColumn = "harga_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -2964,7 +2273,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
+            param.SourceColumn = "harga_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -2972,7 +2281,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
+            param.SourceColumn = "jumlah_pesanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -2981,7 +2290,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
+            param.SourceColumn = "jumlah_pesanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -2989,7 +2298,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Total Pembayaran"
+            param.SourceColumn = "total_pembayaran"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -2998,99 +2307,99 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Total Pembayaran"
+            param.SourceColumn = "total_pembayaran"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `kasir` (`Id Meja`, `Nama Makanan`, `Harga Makanan`, `Jumlah Pesanan`"& _ 
-                ", `Total Pembayaran`) VALUES (@p1, @p2, @p3, @p4, @p5)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `kasir` (`id_meja`, `nama_makanan`, `harga_makanan`, `jumlah_pesanan`"& _ 
+                ", `total_pembayaran`) VALUES (@p1, @p2, @p3, @p4, @p5)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Meja"
+            param.SourceColumn = "id_meja"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p2"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p3"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
+            param.SourceColumn = "harga_makanan"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p4"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
+            param.SourceColumn = "jumlah_pesanan"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p5"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Total Pembayaran"
+            param.SourceColumn = "total_pembayaran"
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `kasir` SET `Id Meja` = @p1, `Nama Makanan` = @p2, `Harga Makanan` = @p3, "& _ 
-                "`Jumlah Pesanan` = @p4, `Total Pembayaran` = @p5 WHERE ((`Id Meja` = @p6) AND (("& _ 
-                "@p7 = 1 AND `Nama Makanan` IS NULL) OR (`Nama Makanan` = @p8)) AND ((@p9 = 1 AND"& _ 
-                " `Harga Makanan` IS NULL) OR (`Harga Makanan` = @p10)) AND ((@p11 = 1 AND `Jumla"& _ 
-                "h Pesanan` IS NULL) OR (`Jumlah Pesanan` = @p12)) AND ((@p13 = 1 AND `Total Pemb"& _ 
-                "ayaran` IS NULL) OR (`Total Pembayaran` = @p14)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `kasir` SET `id_meja` = @p1, `nama_makanan` = @p2, `harga_makanan` = @p3, "& _ 
+                "`jumlah_pesanan` = @p4, `total_pembayaran` = @p5 WHERE ((`id_meja` = @p6) AND (("& _ 
+                "@p7 = 1 AND `nama_makanan` IS NULL) OR (`nama_makanan` = @p8)) AND ((@p9 = 1 AND"& _ 
+                " `harga_makanan` IS NULL) OR (`harga_makanan` = @p10)) AND ((@p11 = 1 AND `jumla"& _ 
+                "h_pesanan` IS NULL) OR (`jumlah_pesanan` = @p12)) AND ((@p13 = 1 AND `total_pemb"& _ 
+                "ayaran` IS NULL) OR (`total_pembayaran` = @p14)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Meja"
+            param.SourceColumn = "id_meja"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p2"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p3"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
+            param.SourceColumn = "harga_makanan"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p4"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
+            param.SourceColumn = "jumlah_pesanan"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p5"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Total Pembayaran"
+            param.SourceColumn = "total_pembayaran"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p6"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Meja"
+            param.SourceColumn = "id_meja"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -3098,7 +2407,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -3107,7 +2416,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -3115,7 +2424,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
+            param.SourceColumn = "harga_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -3124,7 +2433,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
+            param.SourceColumn = "harga_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -3132,7 +2441,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
+            param.SourceColumn = "jumlah_pesanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -3141,7 +2450,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
+            param.SourceColumn = "jumlah_pesanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -3149,7 +2458,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Total Pembayaran"
+            param.SourceColumn = "total_pembayaran"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -3158,7 +2467,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Total Pembayaran"
+            param.SourceColumn = "total_pembayaran"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
         End Sub
@@ -3176,7 +2485,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `Id Meja`, `Nama Makanan`, `Harga Makanan`, `Jumlah Pesanan`, `Total Pemba"& _ 
+            Me._commandCollection(0).CommandText = "SELECT `id_meja`, `nama_makanan`, `harga_makanan`, `jumlah_pesanan`, `total_pemba"& _ 
                 "yaran` FROM `kasir`"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
@@ -3529,23 +2838,22 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "menu"
-            tableMapping.ColumnMappings.Add("Id Makanan", "Id Makanan")
-            tableMapping.ColumnMappings.Add("Nama Makanan", "Nama Makanan")
-            tableMapping.ColumnMappings.Add("Harga Makanan", "Harga Makanan")
-            tableMapping.ColumnMappings.Add("Pelayan_Id Pelayan", "Pelayan_Id Pelayan")
+            tableMapping.ColumnMappings.Add("id", "id")
+            tableMapping.ColumnMappings.Add("nama_makanan", "nama_makanan")
+            tableMapping.ColumnMappings.Add("harga_makanan", "harga_makanan")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `menu` WHERE ((`Id Makanan` = @p1) AND ((@p2 = 1 AND `Nama Makanan` I"& _ 
-                "S NULL) OR (`Nama Makanan` = @p3)) AND ((@p4 = 1 AND `Harga Makanan` IS NULL) OR"& _ 
-                " (`Harga Makanan` = @p5)) AND (`Pelayan_Id Pelayan` = @p6))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `menu` WHERE ((`id` = @p1) AND ((@p2 = 1 AND `nama_makanan` IS NULL) "& _ 
+                "OR (`nama_makanan` = @p3)) AND ((@p4 = 1 AND `harga_makanan` IS NULL) OR (`harga"& _ 
+                "_makanan` = @p5)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Makanan"
+            param.SourceColumn = "id"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -3553,7 +2861,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -3562,7 +2870,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -3570,7 +2878,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
+            param.SourceColumn = "harga_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -3579,133 +2887,102 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
+            param.SourceColumn = "harga_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `menu` (`Id Makanan`, `Nama Makanan`, `Harga Makanan`, `Pelayan_Id Pe"& _ 
-                "layan`) VALUES (@p1, @p2, @p3, @p4)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `menu` (`id`, `nama_makanan`, `harga_makanan`) VALUES (@p1, @p2, @p3)"& _ 
+                ""
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Makanan"
+            param.SourceColumn = "id"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p2"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p3"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
+            param.SourceColumn = "harga_makanan"
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `menu` SET `Id Makanan` = @p1, `Nama Makanan` = @p2, `Harga Makanan` = @p3"& _ 
-                ", `Pelayan_Id Pelayan` = @p4 WHERE ((`Id Makanan` = @p5) AND ((@p6 = 1 AND `Nama"& _ 
-                " Makanan` IS NULL) OR (`Nama Makanan` = @p7)) AND ((@p8 = 1 AND `Harga Makanan` "& _ 
-                "IS NULL) OR (`Harga Makanan` = @p9)) AND (`Pelayan_Id Pelayan` = @p10))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `menu` SET `id` = @p1, `nama_makanan` = @p2, `harga_makanan` = @p3 WHERE ("& _ 
+                "(`id` = @p4) AND ((@p5 = 1 AND `nama_makanan` IS NULL) OR (`nama_makanan` = @p6)"& _ 
+                ") AND ((@p7 = 1 AND `harga_makanan` IS NULL) OR (`harga_makanan` = @p8)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Makanan"
+            param.SourceColumn = "id"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p2"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p3"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
+            param.SourceColumn = "harga_makanan"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p4"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
+            param.SourceColumn = "id"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p5"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Makanan"
+            param.SourceColumn = "nama_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
+            param.SourceColumn = "harga_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
+            param.ParameterName = "@p8"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Harga Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
+            param.SourceColumn = "harga_makanan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
         End Sub
@@ -3723,8 +3000,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `Id Makanan`, `Nama Makanan`, `Harga Makanan`, `Pelayan_Id Pelayan` FROM `"& _ 
-                "menu`"
+            Me._commandCollection(0).CommandText = "SELECT `id`, `nama_makanan`, `harga_makanan` FROM `menu`"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -3784,7 +3060,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p3 As String, ByVal p5 As String, ByVal p6 As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p3 As String, ByVal p5 As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
             If (p3 Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -3800,7 +3076,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = CType(p5,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(p6,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3820,7 +3095,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String, ByVal p4 As Integer) As Integer
+        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,Integer)
             If (p2 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -3832,7 +3107,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(p3,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(p4,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3852,7 +3126,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String, ByVal p4 As Integer, ByVal p5 As Integer, ByVal p7 As String, ByVal p9 As String, ByVal p10 As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String, ByVal p4 As Integer, ByVal p6 As String, ByVal p8 As String) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,Integer)
             If (p2 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -3865,22 +3139,20 @@ Namespace kel_5_si_restoDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(p3,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,Integer)
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,Integer)
-            If (p7 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            If (p6 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6,String)
             End If
-            If (p9 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            If (p8 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(p9,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(p10,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3900,8 +3172,8 @@ Namespace kel_5_si_restoDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p2 As String, ByVal p3 As String, ByVal p5 As Integer, ByVal p7 As String, ByVal p9 As String, ByVal p10 As Integer) As Integer
-            Return Me.Update(p5, p2, p3, p10, p5, p7, p9, p10)
+        Public Overloads Overridable Function Update(ByVal p2 As String, ByVal p3 As String, ByVal p4 As Integer, ByVal p6 As String, ByVal p8 As String) As Integer
+            Return Me.Update(p4, p2, p3, p4, p6, p8)
         End Function
     End Class
     
@@ -4032,20 +3304,20 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "pelayan"
-            tableMapping.ColumnMappings.Add("Id Pelayan", "Id Pelayan")
-            tableMapping.ColumnMappings.Add("Nama Pelayan", "Nama Pelayan")
+            tableMapping.ColumnMappings.Add("id_pelayan", "id_pelayan")
+            tableMapping.ColumnMappings.Add("nama_pelayan", "nama_pelayan")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `pelayan` WHERE ((`Id Pelayan` = @p1) AND ((@p2 = 1 AND `Nama Pelayan"& _ 
-                "` IS NULL) OR (`Nama Pelayan` = @p3)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `pelayan` WHERE ((`id_pelayan` = @p1) AND ((@p2 = 1 AND `nama_pelayan"& _ 
+                "` IS NULL) OR (`nama_pelayan` = @p3)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Pelayan"
+            param.SourceColumn = "id_pelayan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -4053,7 +3325,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Nama Pelayan"
+            param.SourceColumn = "nama_pelayan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.DeleteCommand.Parameters.Add(param)
@@ -4062,52 +3334,52 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Pelayan"
+            param.SourceColumn = "nama_pelayan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `pelayan` (`Id Pelayan`, `Nama Pelayan`) VALUES (@p1, @p2)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `pelayan` (`id_pelayan`, `nama_pelayan`) VALUES (@p1, @p2)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Pelayan"
+            param.SourceColumn = "id_pelayan"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p2"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Pelayan"
+            param.SourceColumn = "nama_pelayan"
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `pelayan` SET `Id Pelayan` = @p1, `Nama Pelayan` = @p2 WHERE ((`Id Pelayan"& _ 
-                "` = @p3) AND ((@p4 = 1 AND `Nama Pelayan` IS NULL) OR (`Nama Pelayan` = @p5)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `pelayan` SET `id_pelayan` = @p1, `nama_pelayan` = @p2 WHERE ((`id_pelayan"& _ 
+                "` = @p3) AND ((@p4 = 1 AND `nama_pelayan` IS NULL) OR (`nama_pelayan` = @p5)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Pelayan"
+            param.SourceColumn = "id_pelayan"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p2"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Pelayan"
+            param.SourceColumn = "nama_pelayan"
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p3"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Pelayan"
+            param.SourceColumn = "id_pelayan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -4115,7 +3387,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Nama Pelayan"
+            param.SourceColumn = "nama_pelayan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
@@ -4124,7 +3396,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Pelayan"
+            param.SourceColumn = "nama_pelayan"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
         End Sub
@@ -4142,7 +3414,7 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `Id Pelayan`, `Nama Pelayan` FROM `pelayan`"
+            Me._commandCollection(0).CommandText = "SELECT `id_pelayan`, `nama_pelayan` FROM `pelayan`"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4304,471 +3576,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class pelayan_has_pemesananTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.MySql.Data.MySqlClient.MySqlDataAdapter
-        
-        Private _connection As Global.MySql.Data.MySqlClient.MySqlConnection
-        
-        Private _transaction As Global.MySql.Data.MySqlClient.MySqlTransaction
-        
-        Private _commandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.MySql.Data.MySqlClient.MySqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Property Connection() As Global.MySql.Data.MySqlClient.MySqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.MySql.Data.MySqlClient.MySqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Property Transaction() As Global.MySql.Data.MySqlClient.MySqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.MySql.Data.MySqlClient.MySqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "pelayan_has_pemesanan"
-            tableMapping.ColumnMappings.Add("Pelayan_Id Pelayan", "Pelayan_Id Pelayan")
-            tableMapping.ColumnMappings.Add("Pemesanan_Id Meja", "Pemesanan_Id Meja")
-            tableMapping.ColumnMappings.Add("Pemesanan_Menu_Id Makanan", "Pemesanan_Menu_Id Makanan")
-            tableMapping.ColumnMappings.Add("Pemesanan_Kasir_Id Meja", "Pemesanan_Kasir_Id Meja")
-            tableMapping.ColumnMappings.Add("Pemesanan_Pelayan_Id Pelayan", "Pemesanan_Pelayan_Id Pelayan")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `pelayan_has_pemesanan` WHERE ((`Pelayan_Id Pelayan` = @p1) AND (`Pem"& _ 
-                "esanan_Id Meja` = @p2) AND (`Pemesanan_Menu_Id Makanan` = @p3) AND (`Pemesanan_K"& _ 
-                "asir_Id Meja` = @p4) AND (`Pemesanan_Pelayan_Id Pelayan` = @p5))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Id Meja"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Menu_Id Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Kasir_Id Meja"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Pelayan_Id Pelayan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `pelayan_has_pemesanan` (`Pelayan_Id Pelayan`, `Pemesanan_Id Meja`, `"& _ 
-                "Pemesanan_Menu_Id Makanan`, `Pemesanan_Kasir_Id Meja`, `Pemesanan_Pelayan_Id Pel"& _ 
-                "ayan`) VALUES (@p1, @p2, @p3, @p4, @p5)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Id Meja"
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Menu_Id Makanan"
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Kasir_Id Meja"
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Pelayan_Id Pelayan"
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `pelayan_has_pemesanan` SET `Pelayan_Id Pelayan` = @p1, `Pemesanan_Id Meja"& _ 
-                "` = @p2, `Pemesanan_Menu_Id Makanan` = @p3, `Pemesanan_Kasir_Id Meja` = @p4, `Pe"& _ 
-                "mesanan_Pelayan_Id Pelayan` = @p5 WHERE ((`Pelayan_Id Pelayan` = @p6) AND (`Peme"& _ 
-                "sanan_Id Meja` = @p7) AND (`Pemesanan_Menu_Id Makanan` = @p8) AND (`Pemesanan_Ka"& _ 
-                "sir_Id Meja` = @p9) AND (`Pemesanan_Pelayan_Id Pelayan` = @p10))"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Id Meja"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Menu_Id Makanan"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Kasir_Id Meja"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Pelayan_Id Pelayan"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Id Meja"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Menu_Id Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Kasir_Id Meja"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pemesanan_Pelayan_Id Pelayan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.MySql.Data.MySqlClient.MySqlConnection()
-            Me._connection.ConnectionString = Global.App_Pemesanan.My.MySettings.Default.kel_5_si_restoConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
-            Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `Pelayan_Id Pelayan`, `Pemesanan_Id Meja`, `Pemesanan_Menu_Id Makanan`, `P"& _ 
-                "emesanan_Kasir_Id Meja`, `Pemesanan_Pelayan_Id Pelayan` FROM `pelayan_has_pemesa"& _ 
-                "nan`"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As kel_5_si_restoDataSet.pelayan_has_pemesananDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As kel_5_si_restoDataSet.pelayan_has_pemesananDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As kel_5_si_restoDataSet.pelayan_has_pemesananDataTable = New kel_5_si_restoDataSet.pelayan_has_pemesananDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As kel_5_si_restoDataSet.pelayan_has_pemesananDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As kel_5_si_restoDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "pelayan_has_pemesanan")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As Integer, ByVal p4 As Integer, ByVal p5 As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(p2,Integer)
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(p3,Integer)
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(p4,Integer)
-            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(p5,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As Integer, ByVal p4 As Integer, ByVal p5 As Integer) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,Integer)
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(p2,Integer)
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(p3,Integer)
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(p4,Integer)
-            Me.Adapter.InsertCommand.Parameters(4).Value = CType(p5,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As Integer, ByVal p4 As Integer, ByVal p5 As Integer, ByVal p6 As Integer, ByVal p7 As Integer, ByVal p8 As Integer, ByVal p9 As Integer, ByVal p10 As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,Integer)
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,Integer)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(p3,Integer)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,Integer)
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,Integer)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6,Integer)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7,Integer)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,Integer)
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(p9,Integer)
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(p10,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p6 As Integer, ByVal p7 As Integer, ByVal p8 As Integer, ByVal p9 As Integer, ByVal p10 As Integer) As Integer
-            Return Me.Update(p6, p7, p8, p9, p10, p6, p7, p8, p9, p10)
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
     Partial Public Class pemesananTableAdapter
         Inherits Global.System.ComponentModel.Component
         
@@ -4887,302 +3694,44 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "pemesanan"
-            tableMapping.ColumnMappings.Add("Id Meja", "Id Meja")
-            tableMapping.ColumnMappings.Add("Nama Makanan", "Nama Makanan")
-            tableMapping.ColumnMappings.Add("Jumlah Pesanan", "Jumlah Pesanan")
-            tableMapping.ColumnMappings.Add("Menu Tambahan", "Menu Tambahan")
-            tableMapping.ColumnMappings.Add("Menu_Id Makanan", "Menu_Id Makanan")
-            tableMapping.ColumnMappings.Add("Kasir_Id Meja", "Kasir_Id Meja")
-            tableMapping.ColumnMappings.Add("Pelayan_Id Pelayan", "Pelayan_Id Pelayan")
+            tableMapping.ColumnMappings.Add("id_meja", "id_meja")
+            tableMapping.ColumnMappings.Add("nama_makanan", "nama_makanan")
+            tableMapping.ColumnMappings.Add("jumlah_pesanan", "jumlah_pesanan")
+            tableMapping.ColumnMappings.Add("menu_tambahan", "menu_tambahan")
             Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `pemesanan` WHERE ((`Id Meja` = @p1) AND ((@p2 = 1 AND `Nama Makanan`"& _ 
-                " IS NULL) OR (`Nama Makanan` = @p3)) AND ((@p4 = 1 AND `Jumlah Pesanan` IS NULL)"& _ 
-                " OR (`Jumlah Pesanan` = @p5)) AND ((@p6 = 1 AND `Menu Tambahan` IS NULL) OR (`Me"& _ 
-                "nu Tambahan` = @p7)) AND (`Menu_Id Makanan` = @p8) AND (`Kasir_Id Meja` = @p9) A"& _ 
-                "ND (`Pelayan_Id Pelayan` = @p10))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `pemesanan` (`id_meja`, `nama_makanan`, `jumlah_pesanan`, `menu_tamba"& _ 
+                "han`) VALUES (@p1, @p2, @p3, @p4)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Id Meja"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Menu Tambahan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "Menu Tambahan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Menu_Id Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Kasir_Id Meja"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `pemesanan` (`Id Meja`, `Nama Makanan`, `Jumlah Pesanan`, `Menu Tamba"& _ 
-                "han`, `Menu_Id Makanan`, `Kasir_Id Meja`, `Pelayan_Id Pelayan`) VALUES (@p1, @p2"& _ 
-                ", @p3, @p4, @p5, @p6, @p7)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Id Meja"
+            param.SourceColumn = "id_meja"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p2"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
+            param.SourceColumn = "nama_makanan"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p3"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
+            param.SourceColumn = "jumlah_pesanan"
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p4"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "Menu Tambahan"
+            param.SourceColumn = "menu_tambahan"
             Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Menu_Id Makanan"
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Kasir_Id Meja"
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `pemesanan` SET `Id Meja` = @p1, `Nama Makanan` = @p2, `Jumlah Pesanan` = "& _ 
-                "@p3, `Menu Tambahan` = @p4, `Menu_Id Makanan` = @p5, `Kasir_Id Meja` = @p6, `Pel"& _ 
-                "ayan_Id Pelayan` = @p7 WHERE ((`Id Meja` = @p8) AND ((@p9 = 1 AND `Nama Makanan`"& _ 
-                " IS NULL) OR (`Nama Makanan` = @p10)) AND ((@p11 = 1 AND `Jumlah Pesanan` IS NUL"& _ 
-                "L) OR (`Jumlah Pesanan` = @p12)) AND ((@p13 = 1 AND `Menu Tambahan` IS NULL) OR "& _ 
-                "(`Menu Tambahan` = @p14)) AND (`Menu_Id Makanan` = @p15) AND (`Kasir_Id Meja` = "& _ 
-                "@p16) AND (`Pelayan_Id Pelayan` = @p17))"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Id Meja"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "Menu Tambahan"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Menu_Id Makanan"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Kasir_Id Meja"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Id Meja"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "Nama Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Jumlah Pesanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Menu Tambahan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "Menu Tambahan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p15"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Menu_Id Makanan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p16"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Kasir_Id Meja"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p17"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "Pelayan_Id Pelayan"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5198,8 +3747,8 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `Id Meja`, `Nama Makanan`, `Jumlah Pesanan`, `Menu Tambahan`, `Menu_Id Mak"& _ 
-                "anan`, `Kasir_Id Meja`, `Pelayan_Id Pelayan` FROM `pemesanan`"
+            Me._commandCollection(0).CommandText = "SELECT `id_meja`, `nama_makanan`, `jumlah_pesanan`, `menu_tambahan` FROM `pemesan"& _ 
+                "an`"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5258,54 +3807,13 @@ Namespace kel_5_si_restoDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p3 As String, ByVal p5 As Global.System.Nullable(Of Integer), ByVal p7 As String, ByVal p8 As Integer, ByVal p9 As Integer, ByVal p10 As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
-            If (p3 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(p3,String)
-            End If
-            If (p5.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(p5.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (p7 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(p7,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(p8,Integer)
-            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(p9,Integer)
-            Me.Adapter.DeleteCommand.Parameters(9).Value = CType(p10,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As Global.System.Nullable(Of Integer), ByVal p4 As String, ByVal p5 As Integer, ByVal p6 As Integer, ByVal p7 As Integer) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,Integer)
+        Public Overloads Overridable Function Insert(ByVal p1 As Global.System.Nullable(Of Integer), ByVal p2 As String, ByVal p3 As Global.System.Nullable(Of Integer), ByVal p4 As String) As Integer
+            If (p1.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
             If (p2 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
@@ -5321,9 +3829,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(p4,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(4).Value = CType(p5,Integer)
-            Me.Adapter.InsertCommand.Parameters(5).Value = CType(p6,Integer)
-            Me.Adapter.InsertCommand.Parameters(6).Value = CType(p7,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5337,78 +3842,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
                     Me.Adapter.InsertCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As Global.System.Nullable(Of Integer), ByVal p4 As String, ByVal p5 As Integer, ByVal p6 As Integer, ByVal p7 As Integer, ByVal p8 As Integer, ByVal p10 As String, ByVal p12 As Global.System.Nullable(Of Integer), ByVal p14 As String, ByVal p15 As Integer, ByVal p16 As Integer, ByVal p17 As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,Integer)
-            If (p2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,String)
-            End If
-            If (p3.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(p3.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (p4 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,Integer)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6,Integer)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7,Integer)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,Integer)
-            If (p10 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(p10,String)
-            End If
-            If (p12.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(p12.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
-            End If
-            If (p14 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(p14,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,Integer)
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(p16,Integer)
-            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(p17,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p2 As String, ByVal p3 As Global.System.Nullable(Of Integer), ByVal p4 As String, ByVal p8 As Integer, ByVal p10 As String, ByVal p12 As Global.System.Nullable(Of Integer), ByVal p14 As String, ByVal p15 As Integer, ByVal p16 As Integer, ByVal p17 As Integer) As Integer
-            Return Me.Update(p8, p2, p3, p4, p15, p16, p17, p8, p10, p12, p14, p15, p16, p17)
         End Function
     End Class
     
@@ -5430,8 +3863,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
         Private _menuTableAdapter As menuTableAdapter
         
         Private _pelayanTableAdapter As pelayanTableAdapter
-        
-        Private _pelayan_has_pemesananTableAdapter As pelayan_has_pemesananTableAdapter
         
         Private _pemesananTableAdapter As pemesananTableAdapter
         
@@ -5497,20 +3928,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property pelayan_has_pemesananTableAdapter() As pelayan_has_pemesananTableAdapter
-            Get
-                Return Me._pelayan_has_pemesananTableAdapter
-            End Get
-            Set
-                Me._pelayan_has_pemesananTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property pemesananTableAdapter() As pemesananTableAdapter
             Get
                 Return Me._pemesananTableAdapter
@@ -5551,10 +3968,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
                             AndAlso (Not (Me._pelayanTableAdapter.Connection) Is Nothing)) Then
                     Return Me._pelayanTableAdapter.Connection
                 End If
-                If ((Not (Me._pelayan_has_pemesananTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._pelayan_has_pemesananTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._pelayan_has_pemesananTableAdapter.Connection
-                End If
                 If ((Not (Me._pemesananTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._pemesananTableAdapter.Connection) Is Nothing)) Then
                     Return Me._pemesananTableAdapter.Connection
@@ -5581,9 +3994,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
                 If (Not (Me._pelayanTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._pelayan_has_pemesananTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
                 If (Not (Me._pemesananTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
@@ -5607,6 +4017,15 @@ Namespace kel_5_si_restoDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._pemesananTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.pemesanan.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._pemesananTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._kasirTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.kasir.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -5622,24 +4041,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._menuTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._pemesananTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.pemesanan.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._pemesananTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._pelayan_has_pemesananTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.pelayan_has_pemesanan.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._pelayan_has_pemesananTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -5661,6 +4062,14 @@ Namespace kel_5_si_restoDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._pemesananTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.pemesanan.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._pemesananTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._kasirTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.kasir.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -5677,22 +4086,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._pemesananTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.pemesanan.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._pemesananTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._pelayan_has_pemesananTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.pelayan_has_pemesanan.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._pelayan_has_pemesananTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             Return result
         End Function
         
@@ -5703,22 +4096,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As kel_5_si_restoDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._pelayan_has_pemesananTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.pelayan_has_pemesanan.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._pelayan_has_pemesananTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._pemesananTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.pemesanan.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._pemesananTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._menuTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.menu.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -5732,6 +4109,14 @@ Namespace kel_5_si_restoDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._kasirTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._pemesananTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.pemesanan.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._pemesananTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -5799,11 +4184,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._pelayan_has_pemesananTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._pelayan_has_pemesananTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
             If ((Not (Me._pemesananTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._pemesananTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
@@ -5866,15 +4246,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
                     If Me._pelayanTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._pelayanTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._pelayanTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._pelayan_has_pemesananTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._pelayan_has_pemesananTableAdapter, Me._pelayan_has_pemesananTableAdapter.Connection)
-                    Me._pelayan_has_pemesananTableAdapter.Connection = CType(workConnection,Global.MySql.Data.MySqlClient.MySqlConnection)
-                    Me._pelayan_has_pemesananTableAdapter.Transaction = CType(workTransaction,Global.MySql.Data.MySqlClient.MySqlTransaction)
-                    If Me._pelayan_has_pemesananTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._pelayan_has_pemesananTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._pelayan_has_pemesananTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._pemesananTableAdapter) Is Nothing) Then
@@ -5957,10 +4328,6 @@ Namespace kel_5_si_restoDataSetTableAdapters
                 If (Not (Me._pelayanTableAdapter) Is Nothing) Then
                     Me._pelayanTableAdapter.Connection = CType(revertConnections(Me._pelayanTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
                     Me._pelayanTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._pelayan_has_pemesananTableAdapter) Is Nothing) Then
-                    Me._pelayan_has_pemesananTableAdapter.Connection = CType(revertConnections(Me._pelayan_has_pemesananTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
-                    Me._pelayan_has_pemesananTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._pemesananTableAdapter) Is Nothing) Then
                     Me._pemesananTableAdapter.Connection = CType(revertConnections(Me._pemesananTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)

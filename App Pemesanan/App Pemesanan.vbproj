@@ -98,11 +98,6 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="kel_5_si_restoDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>kel_5_si_restoDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Lihat Menu.Designer.vb">
       <DependentUpon>Lihat Menu.vb</DependentUpon>
     </Compile>
@@ -181,17 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="kel_5_si_restoDataSet.xsc">
-      <DependentUpon>kel_5_si_restoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="kel_5_si_restoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>kel_5_si_restoDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="kel_5_si_restoDataSet.xss">
-      <DependentUpon>kel_5_si_restoDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

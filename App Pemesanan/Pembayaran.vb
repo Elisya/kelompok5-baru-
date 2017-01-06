@@ -29,7 +29,7 @@
 
     End Sub
 
-    Private Sub KasirDataGridView_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles KasirDataGridView.CellContentClick
+    Private Sub KasirDataGridView_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
 
     End Sub
 
