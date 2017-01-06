@@ -1,63 +1,47 @@
 ﻿Public Class formPembayaran
 
-    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub KasirBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub KasirBindingSource1BindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Validate()
-        Me.KasirBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.Kel_5_si_restoDataSet)
+        Me.KasirBindingSource1.EndEdit()
+        Me.TableAdapterManager1.UpdateAll(Me.Kel_5_si_restoDataSet1)
 
     End Sub
 
-    Private Sub formPembayaran_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'Kel_5_si_restoDataSet.kasir' table. You can move, or remove it, as needed.
-        Me.KasirTableAdapter.Fill(Me.Kel_5_si_restoDataSet.kasir)
+    Private Sub formPembayaran_Load_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Kel_5_si_restoDataSet1.kasir' table. You can move, or remove it, as needed.
+        Me.KasirTableAdapter1.Fill(Me.Kel_5_si_restoDataSet1.kasir)
 
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
+    Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        KasirBindingSource1.AddNew()
     End Sub
 
-    Private Sub KasirDataGridView_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
-
-    End Sub
-
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tambahButton.Click
-        KasirBindingSource.AddNew()
-    End Sub
-
-    Private Sub hapusButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles hapusButton.Click
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         Me.Validate()
-        Me.KasirBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.Kel_5_si_restoDataSet)
-
-        MessageBox.Show("Data Telah Terhapus")
-    End Sub
-
-    Private Sub simpanButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles simpanButton.Click
-        Me.Validate()
-        Me.KasirBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.Kel_5_si_restoDataSet)
+        Me.KasirBindingSource1.EndEdit()
+        Me.TableAdapterManager1.UpdateAll(Me.Kel_5_si_restoDataSet1)
 
         MessageBox.Show("Data Telah Tersimpan")
     End Sub
 
-    Private Sub batalButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles batalButton.Click
-        KasirBindingSource.CancelEdit()
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        KasirBindingSource1.CancelEdit()
     End Sub
 
-    Private Sub keluarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles keluarButton.Click
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        If MessageBox.Show("Hapus Data ?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            KasirBindingSource1.RemoveCurrent()
+
+            Me.Validate()
+            Me.KasirBindingSource1.EndEdit()
+            Me.TableAdapterManager1.UpdateAll(Me.Kel_5_si_restoDataSet1)
+
+            MessageBox.Show("Data Telah Terhapus")
+        End If
+    End Sub
+
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
         Me.Close()
     End Sub
 End Class
