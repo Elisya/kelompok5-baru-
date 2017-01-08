@@ -27,37 +27,66 @@ Partial Class formmenu
         Dim Nama_makananLabel As System.Windows.Forms.Label
         Dim Harga_makananLabel As System.Windows.Forms.Label
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Kel_5_si_restoDataSet1 = New App_Pemesanan.kel_5_si_restoDataSet()
-        Me.MenuBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MenuTableAdapter1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.menuTableAdapter()
-        Me.TableAdapterManager1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager()
-        Me.IdSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.Nama_makananTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.Harga_makananTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.MenuDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.IdSpinEdit = New DevExpress.XtraEditors.SpinEdit()
+        Me.MenuBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Kel_5_si_restoDataSet1 = New App_Pemesanan.kel_5_si_restoDataSet()
+        Me.Nama_makananTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.Harga_makananTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.MenuTableAdapter1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.menuTableAdapter()
+        Me.TableAdapterManager1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager()
+        Me.MenuDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         IdLabel = New System.Windows.Forms.Label()
         Nama_makananLabel = New System.Windows.Forms.Label()
         Harga_makananLabel = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.Kel_5_si_restoDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MenuBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MenuBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Kel_5_si_restoDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Nama_makananTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Harga_makananTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MenuDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'IdLabel
+        '
+        IdLabel.AutoSize = True
+        IdLabel.Location = New System.Drawing.Point(10, 31)
+        IdLabel.Name = "IdLabel"
+        IdLabel.Size = New System.Drawing.Size(19, 13)
+        IdLabel.TabIndex = 0
+        IdLabel.Text = "Id:"
+        '
+        'Nama_makananLabel
+        '
+        Nama_makananLabel.AutoSize = True
+        Nama_makananLabel.Location = New System.Drawing.Point(10, 57)
+        Nama_makananLabel.Name = "Nama_makananLabel"
+        Nama_makananLabel.Size = New System.Drawing.Size(86, 13)
+        Nama_makananLabel.TabIndex = 2
+        Nama_makananLabel.Text = "Nama Makanan:"
+        '
+        'Harga_makananLabel
+        '
+        Harga_makananLabel.AutoSize = True
+        Harga_makananLabel.Location = New System.Drawing.Point(10, 83)
+        Harga_makananLabel.Name = "Harga_makananLabel"
+        Harga_makananLabel.Size = New System.Drawing.Size(87, 13)
+        Harga_makananLabel.TabIndex = 4
+        Harga_makananLabel.Text = "Harga Makanan:"
+        '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Tomato
+        Me.GroupBox2.Controls.Add(Me.MenuDataGridView)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.Button6)
         Me.GroupBox2.Controls.Add(Me.Button5)
@@ -70,121 +99,25 @@ Partial Class formmenu
         Me.GroupBox2.Controls.Add(Me.Nama_makananTextEdit)
         Me.GroupBox2.Controls.Add(Harga_makananLabel)
         Me.GroupBox2.Controls.Add(Me.Harga_makananTextEdit)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 13)
+        Me.GroupBox2.Location = New System.Drawing.Point(-2, -1)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(359, 235)
+        Me.GroupBox2.Size = New System.Drawing.Size(672, 249)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "GroupBox2"
         '
-        'Kel_5_si_restoDataSet1
+        'Button1
         '
-        Me.Kel_5_si_restoDataSet1.DataSetName = "kel_5_si_restoDataSet"
-        Me.Kel_5_si_restoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MenuBindingSource1
-        '
-        Me.MenuBindingSource1.DataMember = "menu"
-        Me.MenuBindingSource1.DataSource = Me.Kel_5_si_restoDataSet1
-        '
-        'MenuTableAdapter1
-        '
-        Me.MenuTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.kasirTableAdapter = Nothing
-        Me.TableAdapterManager1.menuTableAdapter = Me.MenuTableAdapter1
-        Me.TableAdapterManager1.pelayanTableAdapter = Nothing
-        Me.TableAdapterManager1.pemesananTableAdapter = Nothing
-        Me.TableAdapterManager1.UpdateOrder = App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'IdLabel
-        '
-        IdLabel.AutoSize = True
-        IdLabel.Location = New System.Drawing.Point(10, 31)
-        IdLabel.Name = "IdLabel"
-        IdLabel.Size = New System.Drawing.Size(19, 13)
-        IdLabel.TabIndex = 0
-        IdLabel.Text = "Id:"
-        '
-        'IdSpinEdit
-        '
-        Me.IdSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.MenuBindingSource1, "id", True))
-        Me.IdSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.IdSpinEdit.Location = New System.Drawing.Point(100, 28)
-        Me.IdSpinEdit.Name = "IdSpinEdit"
-        Me.IdSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.IdSpinEdit.Size = New System.Drawing.Size(133, 20)
-        Me.IdSpinEdit.TabIndex = 1
-        '
-        'Nama_makananLabel
-        '
-        Nama_makananLabel.AutoSize = True
-        Nama_makananLabel.Location = New System.Drawing.Point(10, 57)
-        Nama_makananLabel.Name = "Nama_makananLabel"
-        Nama_makananLabel.Size = New System.Drawing.Size(86, 13)
-        Nama_makananLabel.TabIndex = 2
-        Nama_makananLabel.Text = "Nama Makanan:"
-        '
-        'Nama_makananTextEdit
-        '
-        Me.Nama_makananTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.MenuBindingSource1, "nama_makanan", True))
-        Me.Nama_makananTextEdit.Location = New System.Drawing.Point(100, 54)
-        Me.Nama_makananTextEdit.Name = "Nama_makananTextEdit"
-        Me.Nama_makananTextEdit.Size = New System.Drawing.Size(167, 20)
-        Me.Nama_makananTextEdit.TabIndex = 3
-        '
-        'Harga_makananLabel
-        '
-        Harga_makananLabel.AutoSize = True
-        Harga_makananLabel.Location = New System.Drawing.Point(10, 83)
-        Harga_makananLabel.Name = "Harga_makananLabel"
-        Harga_makananLabel.Size = New System.Drawing.Size(87, 13)
-        Harga_makananLabel.TabIndex = 4
-        Harga_makananLabel.Text = "Harga Makanan:"
-        '
-        'Harga_makananTextEdit
-        '
-        Me.Harga_makananTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.MenuBindingSource1, "harga_makanan", True))
-        Me.Harga_makananTextEdit.Location = New System.Drawing.Point(100, 80)
-        Me.Harga_makananTextEdit.Name = "Harga_makananTextEdit"
-        Me.Harga_makananTextEdit.Size = New System.Drawing.Size(167, 20)
-        Me.Harga_makananTextEdit.TabIndex = 5
-        '
-        'MenuDataGridView
-        '
-        Me.MenuDataGridView.AutoGenerateColumns = False
-        Me.MenuDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MenuDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
-        Me.MenuDataGridView.DataSource = Me.MenuBindingSource1
-        Me.MenuDataGridView.Location = New System.Drawing.Point(26, 254)
-        Me.MenuDataGridView.Name = "MenuDataGridView"
-        Me.MenuDataGridView.Size = New System.Drawing.Size(346, 220)
-        Me.MenuDataGridView.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "nama_makanan"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "nama_makanan"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "harga_makanan"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "harga_makanan"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.Button1.Location = New System.Drawing.Point(145, 189)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(122, 32)
+        Me.Button1.TabIndex = 19
+        Me.Button1.Text = "Lihat Menu"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(79, 189)
+        Me.Button6.Location = New System.Drawing.Point(17, 189)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(122, 32)
         Me.Button6.TabIndex = 18
@@ -227,26 +160,94 @@ Partial Class formmenu
         Me.Button2.Text = "Tambah"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button1
+        'IdSpinEdit
         '
-        Me.Button1.Location = New System.Drawing.Point(220, 189)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(122, 32)
-        Me.Button1.TabIndex = 19
-        Me.Button1.Text = "Lihat Menu"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.IdSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.MenuBindingSource1, "id", True))
+        Me.IdSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.IdSpinEdit.Location = New System.Drawing.Point(100, 28)
+        Me.IdSpinEdit.Name = "IdSpinEdit"
+        Me.IdSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdSpinEdit.Size = New System.Drawing.Size(133, 20)
+        Me.IdSpinEdit.TabIndex = 1
+        '
+        'MenuBindingSource1
+        '
+        Me.MenuBindingSource1.DataMember = "menu"
+        Me.MenuBindingSource1.DataSource = Me.Kel_5_si_restoDataSet1
+        '
+        'Kel_5_si_restoDataSet1
+        '
+        Me.Kel_5_si_restoDataSet1.DataSetName = "kel_5_si_restoDataSet"
+        Me.Kel_5_si_restoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Nama_makananTextEdit
+        '
+        Me.Nama_makananTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.MenuBindingSource1, "nama_makanan", True))
+        Me.Nama_makananTextEdit.Location = New System.Drawing.Point(100, 54)
+        Me.Nama_makananTextEdit.Name = "Nama_makananTextEdit"
+        Me.Nama_makananTextEdit.Size = New System.Drawing.Size(167, 20)
+        Me.Nama_makananTextEdit.TabIndex = 3
+        '
+        'Harga_makananTextEdit
+        '
+        Me.Harga_makananTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.MenuBindingSource1, "harga_makanan", True))
+        Me.Harga_makananTextEdit.Location = New System.Drawing.Point(100, 80)
+        Me.Harga_makananTextEdit.Name = "Harga_makananTextEdit"
+        Me.Harga_makananTextEdit.Size = New System.Drawing.Size(167, 20)
+        Me.Harga_makananTextEdit.TabIndex = 5
+        '
+        'MenuTableAdapter1
+        '
+        Me.MenuTableAdapter1.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.kasirTableAdapter = Nothing
+        Me.TableAdapterManager1.menuTableAdapter = Me.MenuTableAdapter1
+        Me.TableAdapterManager1.pelayanTableAdapter = Nothing
+        Me.TableAdapterManager1.pemesananTableAdapter = Nothing
+        Me.TableAdapterManager1.UpdateOrder = App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'MenuDataGridView
+        '
+        Me.MenuDataGridView.AutoGenerateColumns = False
+        Me.MenuDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.MenuDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
+        Me.MenuDataGridView.DataSource = Me.MenuBindingSource1
+        Me.MenuDataGridView.Location = New System.Drawing.Point(273, 9)
+        Me.MenuDataGridView.Name = "MenuDataGridView"
+        Me.MenuDataGridView.Size = New System.Drawing.Size(369, 220)
+        Me.MenuDataGridView.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "nama_makanan"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "nama_makanan"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "harga_makanan"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "harga_makanan"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
         'formmenu
         '
-        Me.ClientSize = New System.Drawing.Size(415, 486)
-        Me.Controls.Add(Me.MenuDataGridView)
+        Me.ClientSize = New System.Drawing.Size(670, 486)
         Me.Controls.Add(Me.GroupBox2)
         Me.Name = "formmenu"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.Kel_5_si_restoDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MenuBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MenuBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Kel_5_si_restoDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Nama_makananTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Harga_makananTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MenuDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
