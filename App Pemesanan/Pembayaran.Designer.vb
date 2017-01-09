@@ -29,14 +29,20 @@ Partial Class formPembayaran
         Dim Jumlah_pesananLabel As System.Windows.Forms.Label
         Dim total As System.Windows.Forms.Label
         Dim uangbayar As System.Windows.Forms.Label
+        Dim minum As System.Windows.Forms.Label
+        Dim hminum As System.Windows.Forms.Label
+        Dim jmlminum As System.Windows.Forms.Label
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.kembali2 = New System.Windows.Forms.Label()
+        Me.kembali = New System.Windows.Forms.Label()
+        Me.pembyrn = New System.Windows.Forms.TextBox()
+        Me.KasirBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Kel_5_si_restoDataSet1 = New App_Pemesanan.kel_5_si_restoDataSet()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.KasirBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Kel_5_si_restoDataSet1 = New App_Pemesanan.kel_5_si_restoDataSet()
         Me.id = New System.Windows.Forms.TextBox()
         Me.nama = New System.Windows.Forms.TextBox()
         Me.harga = New System.Windows.Forms.TextBox()
@@ -44,15 +50,19 @@ Partial Class formPembayaran
         Me.biaya = New System.Windows.Forms.TextBox()
         Me.KasirTableAdapter1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.kasirTableAdapter()
         Me.TableAdapterManager1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager()
-        Me.pembyrn = New System.Windows.Forms.TextBox()
-        Me.kembali = New System.Windows.Forms.Label()
-        Me.kembali2 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.minuman = New System.Windows.Forms.TextBox()
+        Me.minuman2 = New System.Windows.Forms.TextBox()
+        Me.minuman3 = New System.Windows.Forms.TextBox()
         Id_mejaLabel = New System.Windows.Forms.Label()
         Nama_makananLabel = New System.Windows.Forms.Label()
         Harga_makananLabel = New System.Windows.Forms.Label()
         Jumlah_pesananLabel = New System.Windows.Forms.Label()
         total = New System.Windows.Forms.Label()
         uangbayar = New System.Windows.Forms.Label()
+        minum = New System.Windows.Forms.Label()
+        hminum = New System.Windows.Forms.Label()
+        jmlminum = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.KasirBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Kel_5_si_restoDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +71,7 @@ Partial Class formPembayaran
         'Id_mejaLabel
         '
         Id_mejaLabel.AutoSize = True
-        Id_mejaLabel.Location = New System.Drawing.Point(8, 47)
+        Id_mejaLabel.Location = New System.Drawing.Point(8, 31)
         Id_mejaLabel.Name = "Id_mejaLabel"
         Id_mejaLabel.Size = New System.Drawing.Size(45, 13)
         Id_mejaLabel.TabIndex = 0
@@ -70,7 +80,7 @@ Partial Class formPembayaran
         'Nama_makananLabel
         '
         Nama_makananLabel.AutoSize = True
-        Nama_makananLabel.Location = New System.Drawing.Point(8, 73)
+        Nama_makananLabel.Location = New System.Drawing.Point(8, 57)
         Nama_makananLabel.Name = "Nama_makananLabel"
         Nama_makananLabel.Size = New System.Drawing.Size(86, 13)
         Nama_makananLabel.TabIndex = 2
@@ -79,7 +89,7 @@ Partial Class formPembayaran
         'Harga_makananLabel
         '
         Harga_makananLabel.AutoSize = True
-        Harga_makananLabel.Location = New System.Drawing.Point(8, 99)
+        Harga_makananLabel.Location = New System.Drawing.Point(8, 83)
         Harga_makananLabel.Name = "Harga_makananLabel"
         Harga_makananLabel.Size = New System.Drawing.Size(87, 13)
         Harga_makananLabel.TabIndex = 4
@@ -88,7 +98,7 @@ Partial Class formPembayaran
         'Jumlah_pesananLabel
         '
         Jumlah_pesananLabel.AutoSize = True
-        Jumlah_pesananLabel.Location = New System.Drawing.Point(8, 125)
+        Jumlah_pesananLabel.Location = New System.Drawing.Point(8, 109)
         Jumlah_pesananLabel.Name = "Jumlah_pesananLabel"
         Jumlah_pesananLabel.Size = New System.Drawing.Size(88, 13)
         Jumlah_pesananLabel.TabIndex = 6
@@ -97,14 +107,30 @@ Partial Class formPembayaran
         'total
         '
         total.AutoSize = True
-        total.Location = New System.Drawing.Point(8, 151)
+        total.Location = New System.Drawing.Point(8, 206)
         total.Name = "total"
         total.Size = New System.Drawing.Size(96, 13)
         total.TabIndex = 8
         total.Text = "Total Pembayaran:"
         '
+        'uangbayar
+        '
+        uangbayar.AutoSize = True
+        uangbayar.Location = New System.Drawing.Point(8, 235)
+        uangbayar.Name = "uangbayar"
+        uangbayar.Size = New System.Drawing.Size(98, 13)
+        uangbayar.TabIndex = 19
+        uangbayar.Text = "Uang Pembayaran:"
+        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(minum)
+        Me.GroupBox2.Controls.Add(Me.minuman)
+        Me.GroupBox2.Controls.Add(hminum)
+        Me.GroupBox2.Controls.Add(Me.minuman2)
+        Me.GroupBox2.Controls.Add(jmlminum)
+        Me.GroupBox2.Controls.Add(Me.minuman3)
+        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox2.Controls.Add(Me.kembali2)
         Me.GroupBox2.Controls.Add(Me.kembali)
         Me.GroupBox2.Controls.Add(uangbayar)
@@ -131,50 +157,31 @@ Partial Class formPembayaran
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Pembayaran"
         '
-        'Button6
+        'kembali2
         '
-        Me.Button6.Location = New System.Drawing.Point(309, 148)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(255, 45)
-        Me.Button6.TabIndex = 18
-        Me.Button6.Text = "Keluar"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.kembali2.AutoSize = True
+        Me.kembali2.Location = New System.Drawing.Point(145, 287)
+        Me.kembali2.Name = "kembali2"
+        Me.kembali2.Size = New System.Drawing.Size(56, 13)
+        Me.kembali2.TabIndex = 22
+        Me.kembali2.Text = "Kembalian"
         '
-        'Button5
+        'kembali
         '
-        Me.Button5.Location = New System.Drawing.Point(437, 95)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(127, 43)
-        Me.Button5.TabIndex = 17
-        Me.Button5.Text = "Hapus"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.kembali.AutoSize = True
+        Me.kembali.Location = New System.Drawing.Point(29, 269)
+        Me.kembali.Name = "kembali"
+        Me.kembali.Size = New System.Drawing.Size(62, 13)
+        Me.kembali.TabIndex = 21
+        Me.kembali.Text = "Kembalian :"
         '
-        'Button4
+        'pembyrn
         '
-        Me.Button4.Location = New System.Drawing.Point(438, 47)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(127, 42)
-        Me.Button4.TabIndex = 16
-        Me.Button4.Text = "Simpan"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(309, 95)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(127, 43)
-        Me.Button3.TabIndex = 15
-        Me.Button3.Text = "Batal"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(309, 47)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(127, 42)
-        Me.Button2.TabIndex = 14
-        Me.Button2.Text = "Tambah"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.pembyrn.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "total_pembayaran", True))
+        Me.pembyrn.Location = New System.Drawing.Point(105, 232)
+        Me.pembyrn.Name = "pembyrn"
+        Me.pembyrn.Size = New System.Drawing.Size(171, 20)
+        Me.pembyrn.TabIndex = 20
         '
         'KasirBindingSource1
         '
@@ -186,10 +193,55 @@ Partial Class formPembayaran
         Me.Kel_5_si_restoDataSet1.DataSetName = "kel_5_si_restoDataSet"
         Me.Kel_5_si_restoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(311, 174)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(255, 45)
+        Me.Button6.TabIndex = 18
+        Me.Button6.Text = "Keluar"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(439, 121)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(127, 43)
+        Me.Button5.TabIndex = 17
+        Me.Button5.Text = "Hapus"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(440, 73)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(127, 42)
+        Me.Button4.TabIndex = 16
+        Me.Button4.Text = "Simpan"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(311, 121)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(127, 43)
+        Me.Button3.TabIndex = 15
+        Me.Button3.Text = "Batal"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(311, 73)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(127, 42)
+        Me.Button2.TabIndex = 14
+        Me.Button2.Text = "Tambah"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'id
         '
         Me.id.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "id_meja", True))
-        Me.id.Location = New System.Drawing.Point(105, 44)
+        Me.id.Location = New System.Drawing.Point(105, 28)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(171, 20)
         Me.id.TabIndex = 1
@@ -197,7 +249,7 @@ Partial Class formPembayaran
         'nama
         '
         Me.nama.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "nama_makanan", True))
-        Me.nama.Location = New System.Drawing.Point(105, 70)
+        Me.nama.Location = New System.Drawing.Point(105, 54)
         Me.nama.Name = "nama"
         Me.nama.Size = New System.Drawing.Size(171, 20)
         Me.nama.TabIndex = 3
@@ -205,7 +257,7 @@ Partial Class formPembayaran
         'harga
         '
         Me.harga.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "harga_makanan", True))
-        Me.harga.Location = New System.Drawing.Point(105, 96)
+        Me.harga.Location = New System.Drawing.Point(105, 80)
         Me.harga.Name = "harga"
         Me.harga.Size = New System.Drawing.Size(171, 20)
         Me.harga.TabIndex = 5
@@ -213,7 +265,7 @@ Partial Class formPembayaran
         'jumlah
         '
         Me.jumlah.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "jumlah_pesanan", True))
-        Me.jumlah.Location = New System.Drawing.Point(105, 122)
+        Me.jumlah.Location = New System.Drawing.Point(105, 106)
         Me.jumlah.Name = "jumlah"
         Me.jumlah.Size = New System.Drawing.Size(171, 20)
         Me.jumlah.TabIndex = 7
@@ -221,7 +273,7 @@ Partial Class formPembayaran
         'biaya
         '
         Me.biaya.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "total_pembayaran", True))
-        Me.biaya.Location = New System.Drawing.Point(105, 148)
+        Me.biaya.Location = New System.Drawing.Point(105, 203)
         Me.biaya.Name = "biaya"
         Me.biaya.Size = New System.Drawing.Size(171, 20)
         Me.biaya.TabIndex = 9
@@ -239,40 +291,63 @@ Partial Class formPembayaran
         Me.TableAdapterManager1.pemesananTableAdapter = Nothing
         Me.TableAdapterManager1.UpdateOrder = App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'uangbayar
+        'DateTimePicker1
         '
-        uangbayar.AutoSize = True
-        uangbayar.Location = New System.Drawing.Point(8, 180)
-        uangbayar.Name = "uangbayar"
-        uangbayar.Size = New System.Drawing.Size(98, 13)
-        uangbayar.TabIndex = 19
-        uangbayar.Text = "Uang Pembayaran:"
+        Me.DateTimePicker1.Location = New System.Drawing.Point(311, 39)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(255, 20)
+        Me.DateTimePicker1.TabIndex = 23
         '
-        'pembyrn
+        'minum
         '
-        Me.pembyrn.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "total_pembayaran", True))
-        Me.pembyrn.Location = New System.Drawing.Point(105, 177)
-        Me.pembyrn.Name = "pembyrn"
-        Me.pembyrn.Size = New System.Drawing.Size(171, 20)
-        Me.pembyrn.TabIndex = 20
+        minum.AutoSize = True
+        minum.Location = New System.Drawing.Point(8, 134)
+        minum.Name = "minum"
+        minum.Size = New System.Drawing.Size(81, 13)
+        minum.TabIndex = 24
+        minum.Text = "Nama Minuman"
         '
-        'kembali
+        'minuman
         '
-        Me.kembali.AutoSize = True
-        Me.kembali.Location = New System.Drawing.Point(29, 214)
-        Me.kembali.Name = "kembali"
-        Me.kembali.Size = New System.Drawing.Size(62, 13)
-        Me.kembali.TabIndex = 21
-        Me.kembali.Text = "Kembalian :"
+        Me.minuman.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "nama_makanan", True))
+        Me.minuman.Location = New System.Drawing.Point(105, 131)
+        Me.minuman.Name = "minuman"
+        Me.minuman.Size = New System.Drawing.Size(171, 20)
+        Me.minuman.TabIndex = 25
         '
-        'kembali2
+        'hminum
         '
-        Me.kembali2.AutoSize = True
-        Me.kembali2.Location = New System.Drawing.Point(145, 248)
-        Me.kembali2.Name = "kembali2"
-        Me.kembali2.Size = New System.Drawing.Size(56, 13)
-        Me.kembali2.TabIndex = 22
-        Me.kembali2.Text = "Kembalian"
+        hminum.AutoSize = True
+        hminum.Location = New System.Drawing.Point(8, 160)
+        hminum.Name = "hminum"
+        hminum.Size = New System.Drawing.Size(82, 13)
+        hminum.TabIndex = 26
+        hminum.Text = "Harga Minuman"
+        '
+        'minuman2
+        '
+        Me.minuman2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "harga_makanan", True))
+        Me.minuman2.Location = New System.Drawing.Point(105, 157)
+        Me.minuman2.Name = "minuman2"
+        Me.minuman2.Size = New System.Drawing.Size(171, 20)
+        Me.minuman2.TabIndex = 27
+        '
+        'jmlminum
+        '
+        jmlminum.AutoSize = True
+        jmlminum.Location = New System.Drawing.Point(8, 183)
+        jmlminum.Name = "jmlminum"
+        jmlminum.Size = New System.Drawing.Size(88, 13)
+        jmlminum.TabIndex = 28
+        jmlminum.Text = "Jumlah Pesanan:"
+        '
+        'minuman3
+        '
+        Me.minuman3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource1, "jumlah_pesanan", True))
+        Me.minuman3.Location = New System.Drawing.Point(105, 180)
+        Me.minuman3.Name = "minuman3"
+        Me.minuman3.Size = New System.Drawing.Size(171, 20)
+        Me.minuman3.TabIndex = 29
         '
         'formPembayaran
         '
@@ -314,4 +389,8 @@ Partial Class formPembayaran
     Friend WithEvents pembyrn As System.Windows.Forms.TextBox
     Friend WithEvents kembali As System.Windows.Forms.Label
     Friend WithEvents kembali2 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents minuman As System.Windows.Forms.TextBox
+    Friend WithEvents minuman2 As System.Windows.Forms.TextBox
+    Friend WithEvents minuman3 As System.Windows.Forms.TextBox
 End Class

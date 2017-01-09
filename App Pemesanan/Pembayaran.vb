@@ -11,6 +11,8 @@
         'TODO: This line of code loads data into the 'Kel_5_si_restoDataSet1.kasir' table. You can move, or remove it, as needed.
         Me.KasirTableAdapter1.Fill(Me.Kel_5_si_restoDataSet1.kasir)
 
+
+
     End Sub
 
     Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -56,13 +58,21 @@
         Dim pembayaran As String = Val(pembyrn.Text) - Val(biaya.Text)
         kembali.Text = uangbayar
         If pembayaran < 0 Then
-            kembali2.Text = "Uang Anda Kurang"
+            kembali2.Text = "-"
         Else
             kembali2.Text = "Rp. " & pembayaran
         End If
     End Sub
 
     Private Sub biaya_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles biaya.TextChanged
-        biaya.Text = Val(harga.Text) * Val(jumlah.Text)
+        biaya.Text = (Val(harga.Text) * Val(jumlah.Text)) + (Val(minuman2.Text) * Val(minuman3.Text))
+    End Sub
+
+    Private Sub kembali_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kembali.Click
+
+    End Sub
+
+    Private Sub GroupBox2_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox2.Enter
+
     End Sub
 End Class
