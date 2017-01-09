@@ -40,10 +40,10 @@ Partial Class formPemesanan
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PemesananBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Kel_5_si_restoDataSet1 = New App_Pemesanan.kel_5_si_restoDataSet()
-        Me.Id_mejaTextBox = New System.Windows.Forms.TextBox()
-        Me.Nama_makananTextBox = New System.Windows.Forms.TextBox()
-        Me.Jumlah_pesananTextBox = New System.Windows.Forms.TextBox()
-        Me.Menu_tambahanTextBox = New System.Windows.Forms.TextBox()
+        Me.meja = New System.Windows.Forms.TextBox()
+        Me.makan = New System.Windows.Forms.TextBox()
+        Me.pesan = New System.Windows.Forms.TextBox()
+        Me.tambah = New System.Windows.Forms.TextBox()
         Me.PemesananTableAdapter1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.pemesananTableAdapter()
         Me.TableAdapterManager1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager()
         Id_mejaLabel = New System.Windows.Forms.Label()
@@ -102,13 +102,13 @@ Partial Class formPemesanan
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.PemesananDataGridView)
         Me.GroupBox2.Controls.Add(Id_mejaLabel)
-        Me.GroupBox2.Controls.Add(Me.Id_mejaTextBox)
+        Me.GroupBox2.Controls.Add(Me.meja)
         Me.GroupBox2.Controls.Add(Nama_makananLabel)
-        Me.GroupBox2.Controls.Add(Me.Nama_makananTextBox)
+        Me.GroupBox2.Controls.Add(Me.makan)
         Me.GroupBox2.Controls.Add(Jumlah_pesananLabel)
-        Me.GroupBox2.Controls.Add(Me.Jumlah_pesananTextBox)
+        Me.GroupBox2.Controls.Add(Me.pesan)
         Me.GroupBox2.Controls.Add(Menu_tambahanLabel)
-        Me.GroupBox2.Controls.Add(Me.Menu_tambahanTextBox)
+        Me.GroupBox2.Controls.Add(Me.tambah)
         Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(807, 326)
@@ -206,37 +206,37 @@ Partial Class formPemesanan
         Me.Kel_5_si_restoDataSet1.DataSetName = "kel_5_si_restoDataSet"
         Me.Kel_5_si_restoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Id_mejaTextBox
+        'meja
         '
-        Me.Id_mejaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "id_meja", True))
-        Me.Id_mejaTextBox.Location = New System.Drawing.Point(102, 36)
-        Me.Id_mejaTextBox.Name = "Id_mejaTextBox"
-        Me.Id_mejaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Id_mejaTextBox.TabIndex = 1
+        Me.meja.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "id_meja", True))
+        Me.meja.Location = New System.Drawing.Point(102, 36)
+        Me.meja.Name = "meja"
+        Me.meja.Size = New System.Drawing.Size(100, 20)
+        Me.meja.TabIndex = 1
         '
-        'Nama_makananTextBox
+        'makan
         '
-        Me.Nama_makananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "nama_makanan", True))
-        Me.Nama_makananTextBox.Location = New System.Drawing.Point(102, 62)
-        Me.Nama_makananTextBox.Name = "Nama_makananTextBox"
-        Me.Nama_makananTextBox.Size = New System.Drawing.Size(190, 20)
-        Me.Nama_makananTextBox.TabIndex = 3
+        Me.makan.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "nama_makanan", True))
+        Me.makan.Location = New System.Drawing.Point(102, 62)
+        Me.makan.Name = "makan"
+        Me.makan.Size = New System.Drawing.Size(190, 20)
+        Me.makan.TabIndex = 3
         '
-        'Jumlah_pesananTextBox
+        'pesan
         '
-        Me.Jumlah_pesananTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "jumlah_pesanan", True))
-        Me.Jumlah_pesananTextBox.Location = New System.Drawing.Point(102, 88)
-        Me.Jumlah_pesananTextBox.Name = "Jumlah_pesananTextBox"
-        Me.Jumlah_pesananTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Jumlah_pesananTextBox.TabIndex = 5
+        Me.pesan.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "jumlah_pesanan", True))
+        Me.pesan.Location = New System.Drawing.Point(102, 88)
+        Me.pesan.Name = "pesan"
+        Me.pesan.Size = New System.Drawing.Size(100, 20)
+        Me.pesan.TabIndex = 5
         '
-        'Menu_tambahanTextBox
+        'tambah
         '
-        Me.Menu_tambahanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "menu_tambahan", True))
-        Me.Menu_tambahanTextBox.Location = New System.Drawing.Point(102, 114)
-        Me.Menu_tambahanTextBox.Name = "Menu_tambahanTextBox"
-        Me.Menu_tambahanTextBox.Size = New System.Drawing.Size(190, 20)
-        Me.Menu_tambahanTextBox.TabIndex = 7
+        Me.tambah.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "menu_tambahan", True))
+        Me.tambah.Location = New System.Drawing.Point(102, 114)
+        Me.tambah.Name = "tambah"
+        Me.tambah.Size = New System.Drawing.Size(190, 20)
+        Me.tambah.TabIndex = 7
         '
         'PemesananTableAdapter1
         '
@@ -285,10 +285,10 @@ Partial Class formPemesanan
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Id_mejaTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Nama_makananTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Jumlah_pesananTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Menu_tambahanTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents meja As System.Windows.Forms.TextBox
+    Friend WithEvents makan As System.Windows.Forms.TextBox
+    Friend WithEvents pesan As System.Windows.Forms.TextBox
+    Friend WithEvents tambah As System.Windows.Forms.TextBox
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button

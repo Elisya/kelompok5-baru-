@@ -85,6 +85,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data Karyawan dan Pelayan.Designer.vb">
+      <DependentUpon>Data Karyawan dan Pelayan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Karyawan dan Pelayan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form Pembayaran.Designer.vb">
       <DependentUpon>Form Pembayaran.vb</DependentUpon>
     </Compile>
@@ -150,6 +156,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Data Karyawan dan Pelayan.resx">
+      <DependentUpon>Data Karyawan dan Pelayan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form Pembayaran.resx">
       <DependentUpon>Form Pembayaran.vb</DependentUpon>
     </EmbeddedResource>
