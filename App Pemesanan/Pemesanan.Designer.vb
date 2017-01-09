@@ -94,6 +94,7 @@ Partial Class formPemesanan
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Tomato
         Me.GroupBox2.Controls.Add(Me.Button6)
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.Button4)
@@ -108,9 +109,9 @@ Partial Class formPemesanan
         Me.GroupBox2.Controls.Add(Me.Jumlah_pesananTextBox)
         Me.GroupBox2.Controls.Add(Menu_tambahanLabel)
         Me.GroupBox2.Controls.Add(Me.Menu_tambahanTextBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(777, 300)
+        Me.GroupBox2.Size = New System.Drawing.Size(807, 326)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Pemesanan"

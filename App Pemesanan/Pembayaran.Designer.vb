@@ -124,6 +124,7 @@ Partial Class formPembayaran
         '
         'GroupBox2
         '
+<<<<<<< HEAD
         Me.GroupBox2.Controls.Add(minum)
         Me.GroupBox2.Controls.Add(Me.minuman)
         Me.GroupBox2.Controls.Add(hminum)
@@ -131,10 +132,16 @@ Partial Class formPembayaran
         Me.GroupBox2.Controls.Add(jmlminum)
         Me.GroupBox2.Controls.Add(Me.minuman3)
         Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
+=======
+<<<<<<< HEAD
+        Me.GroupBox2.BackColor = System.Drawing.Color.Tomato
+=======
+>>>>>>> de7162584e1c2d4cda5782110d127fde45d50746
         Me.GroupBox2.Controls.Add(Me.kembali2)
         Me.GroupBox2.Controls.Add(Me.kembali)
         Me.GroupBox2.Controls.Add(uangbayar)
         Me.GroupBox2.Controls.Add(Me.pembyrn)
+>>>>>>> 4c41f3f059032c790a8971a2c99a3abaa7eaf29d
         Me.GroupBox2.Controls.Add(Me.Button6)
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.Button4)
@@ -147,12 +154,21 @@ Partial Class formPembayaran
         Me.GroupBox2.Controls.Add(Harga_makananLabel)
         Me.GroupBox2.Controls.Add(Me.harga)
         Me.GroupBox2.Controls.Add(Jumlah_pesananLabel)
+<<<<<<< HEAD
+        Me.GroupBox2.Controls.Add(Me.Jumlah_pesananTextBox)
+        Me.GroupBox2.Controls.Add(Total_pembayaranLabel)
+        Me.GroupBox2.Controls.Add(Me.Total_pembayaranTextBox)
+        Me.GroupBox2.Location = New System.Drawing.Point(1, -1)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(900, 317)
+=======
         Me.GroupBox2.Controls.Add(Me.jumlah)
         Me.GroupBox2.Controls.Add(total)
         Me.GroupBox2.Controls.Add(Me.biaya)
         Me.GroupBox2.Location = New System.Drawing.Point(13, 13)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(635, 308)
+>>>>>>> 4c41f3f059032c790a8971a2c99a3abaa7eaf29d
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Pembayaran"
@@ -351,7 +367,11 @@ Partial Class formPembayaran
         '
         'formPembayaran
         '
+<<<<<<< HEAD
+        Me.ClientSize = New System.Drawing.Size(900, 314)
+=======
         Me.ClientSize = New System.Drawing.Size(666, 357)
+>>>>>>> 4c41f3f059032c790a8971a2c99a3abaa7eaf29d
         Me.Controls.Add(Me.GroupBox2)
         Me.Name = "formPembayaran"
         Me.GroupBox2.ResumeLayout(False)
