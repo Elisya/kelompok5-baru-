@@ -868,6 +868,7 @@ Partial Class Form_Pembayaran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Tomato
         Me.ClientSize = New System.Drawing.Size(554, 599)
         Me.Controls.Add(Me.bayar)
         Me.Controls.Add(Me.biaya)

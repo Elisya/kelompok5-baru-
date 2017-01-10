@@ -107,6 +107,7 @@ Partial Class formPembayaran
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Tomato
         Me.GroupBox2.Controls.Add(Me.Button6)
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.Button4)
@@ -123,9 +124,9 @@ Partial Class formPembayaran
         Me.GroupBox2.Controls.Add(Me.Jumlah_pesananTextBox)
         Me.GroupBox2.Controls.Add(Total_pembayaranLabel)
         Me.GroupBox2.Controls.Add(Me.Total_pembayaranTextBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 13)
+        Me.GroupBox2.Location = New System.Drawing.Point(1, -1)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(857, 324)
+        Me.GroupBox2.Size = New System.Drawing.Size(900, 317)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Pembayaran"
@@ -281,7 +282,7 @@ Partial Class formPembayaran
         '
         'formPembayaran
         '
-        Me.ClientSize = New System.Drawing.Size(900, 377)
+        Me.ClientSize = New System.Drawing.Size(900, 314)
         Me.Controls.Add(Me.GroupBox2)
         Me.Name = "formPembayaran"
         Me.GroupBox2.ResumeLayout(False)
