@@ -14,6 +14,12 @@
     End Sub
 
     Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        id.Text = "-"
+        nama.Text = "-"
+        harga.Text = "0"
+        jumlah.Text = "0"
+        biaya.Text = "0"
+        pembyrn.Text = "0"
         KasirBindingSource1.AddNew()
     End Sub
 
@@ -43,5 +49,20 @@
 
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
         Me.Close()
+    End Sub
+
+    Private Sub pembyrn_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pembyrn.TextChanged
+        Const uangbayar As String = "Uang Kembalian " + vbNewLine
+        Dim pembayaran As String = Val(pembyrn.Text) - Val(biaya.Text)
+        kembali.Text = uangbayar
+        If pembayaran < 0 Then
+            kembali2.Text = "Uang Anda Kurang"
+        Else
+            kembali2.Text = "Rp. " & pembayaran
+        End If
+    End Sub
+
+    Private Sub biaya_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles biaya.TextChanged
+        biaya.Text = Val(harga.Text) * Val(jumlah.Text)
     End Sub
 End Class
