@@ -23,6 +23,34 @@
         'TODO: This line of code loads data into the 'Kel_5_si_restoDataSet.kasir' table. You can move, or remove it, as needed.
         Me.KasirTableAdapter.Fill(Me.Kel_5_si_restoDataSet.kasir)
 
+        c2.Items.Add("Nasi Goreng Udang")
+        c2.Items.Add("Pasta")
+        c2.Items.Add("Chiken Roasted")
+        c2.Items.Add("Ikan Sambal Wijen")
+        c2.Items.Add("Kepiting Rempah")
+        c2.Items.Add("Sop Buntut")
+        c2.Items.Add("Ayam Rempah")
+        c2.Items.Add("Salmon's Spinach")
+        c2.Items.Add("Sate")
+        c2.Items.Add("Beef Stik")
+        c2.Items.Add("Ayam Bali")
+        c2.Items.Add("Nasi Oncom")
+        c2.Items.Add("Chiken Tofu")
+        c2.Items.Add("Amagos")
+        c2.Items.Add("Takoyaki")
+        c2.Items.Add("Ubi Wasabi")
+        c2.Items.Add("Big Burger")
+        c2.Items.Add("Bakpao")
+        c2.Items.Add("Almond Cake")
+        c2.Items.Add("Pudding Buah")
+
+
+        c5.Items.Add("Es Teh")
+        c5.Items.Add("Jjus")
+        c5.Items.Add("Sop Buah")
+        c5.Items.Add("S Cendol")
+        c5.Items.Add("S Buah")
+        c5.Items.Add("Coffe")
     End Sub
 
     Private Sub Total_pembayaranLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -73,10 +101,10 @@
     Private Sub tmbh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmbh.Click
         KasirBindingSource.AddNew()
         t1.Text = " "
-        t2.Text = " "
+
         t3.Text = " "
         t4.Text = " "
-        t5.Text = " "
+
         t6.Text = " "
         t7.Text = " "
         t8.Text = " "

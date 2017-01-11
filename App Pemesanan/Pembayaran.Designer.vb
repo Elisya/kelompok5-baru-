@@ -40,11 +40,9 @@ Partial Class formpembayaran
         Me.t9 = New System.Windows.Forms.TextBox()
         Me.KasirBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Kel_5_si_restoDataSet = New App_Pemesanan.kel_5_si_restoDataSet()
-        Me.t5 = New System.Windows.Forms.TextBox()
         Me.t6 = New System.Windows.Forms.TextBox()
         Me.t7 = New System.Windows.Forms.TextBox()
         Me.t1 = New System.Windows.Forms.TextBox()
-        Me.t2 = New System.Windows.Forms.TextBox()
         Me.t3 = New System.Windows.Forms.TextBox()
         Me.t4 = New System.Windows.Forms.TextBox()
         Me.t8 = New System.Windows.Forms.TextBox()
@@ -55,6 +53,8 @@ Partial Class formpembayaran
         Me.tmbh = New System.Windows.Forms.Button()
         Me.KasirTableAdapter = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.kasirTableAdapter()
         Me.TableAdapterManager = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager()
+        Me.c2 = New System.Windows.Forms.ComboBox()
+        Me.c5 = New System.Windows.Forms.ComboBox()
         l1 = New System.Windows.Forms.Label()
         l2 = New System.Windows.Forms.Label()
         l3 = New System.Windows.Forms.Label()
@@ -154,13 +154,14 @@ Partial Class formpembayaran
         'GroupBox1
         '
         Me.GroupBox1.BackgroundImage = CType(resources.GetObject("GroupBox1.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox1.Controls.Add(Me.c5)
+        Me.GroupBox1.Controls.Add(Me.c2)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.kembali2)
         Me.GroupBox1.Controls.Add(Me.kembali)
         Me.GroupBox1.Controls.Add(l9)
         Me.GroupBox1.Controls.Add(Me.t9)
         Me.GroupBox1.Controls.Add(l5)
-        Me.GroupBox1.Controls.Add(Me.t5)
         Me.GroupBox1.Controls.Add(l6)
         Me.GroupBox1.Controls.Add(Me.t6)
         Me.GroupBox1.Controls.Add(l7)
@@ -168,7 +169,6 @@ Partial Class formpembayaran
         Me.GroupBox1.Controls.Add(l1)
         Me.GroupBox1.Controls.Add(Me.t1)
         Me.GroupBox1.Controls.Add(l2)
-        Me.GroupBox1.Controls.Add(Me.t2)
         Me.GroupBox1.Controls.Add(l3)
         Me.GroupBox1.Controls.Add(Me.t3)
         Me.GroupBox1.Controls.Add(l4)
@@ -230,14 +230,6 @@ Partial Class formpembayaran
         Me.Kel_5_si_restoDataSet.DataSetName = "kel_5_si_restoDataSet"
         Me.Kel_5_si_restoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        't5
-        '
-        Me.t5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource, "nama_makanan", True))
-        Me.t5.Location = New System.Drawing.Point(108, 138)
-        Me.t5.Name = "t5"
-        Me.t5.Size = New System.Drawing.Size(148, 20)
-        Me.t5.TabIndex = 20
-        '
         't6
         '
         Me.t6.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource, "harga_makanan", True))
@@ -261,14 +253,6 @@ Partial Class formpembayaran
         Me.t1.Name = "t1"
         Me.t1.Size = New System.Drawing.Size(148, 20)
         Me.t1.TabIndex = 10
-        '
-        't2
-        '
-        Me.t2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KasirBindingSource, "nama_makanan", True))
-        Me.t2.Location = New System.Drawing.Point(107, 55)
-        Me.t2.Name = "t2"
-        Me.t2.Size = New System.Drawing.Size(148, 20)
-        Me.t2.TabIndex = 12
         '
         't3
         '
@@ -352,6 +336,22 @@ Partial Class formpembayaran
         Me.TableAdapterManager.pemesananTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'c2
+        '
+        Me.c2.FormattingEnabled = True
+        Me.c2.Location = New System.Drawing.Point(107, 55)
+        Me.c2.Name = "c2"
+        Me.c2.Size = New System.Drawing.Size(148, 21)
+        Me.c2.TabIndex = 30
+        '
+        'c5
+        '
+        Me.c5.FormattingEnabled = True
+        Me.c5.Location = New System.Drawing.Point(110, 135)
+        Me.c5.Name = "c5"
+        Me.c5.Size = New System.Drawing.Size(146, 21)
+        Me.c5.TabIndex = 31
+        '
         'formpembayaran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -381,13 +381,13 @@ Partial Class formpembayaran
     Friend WithEvents kembali2 As System.Windows.Forms.Label
     Friend WithEvents kembali As System.Windows.Forms.Label
     Friend WithEvents t9 As System.Windows.Forms.TextBox
-    Friend WithEvents t5 As System.Windows.Forms.TextBox
     Friend WithEvents t6 As System.Windows.Forms.TextBox
     Friend WithEvents t7 As System.Windows.Forms.TextBox
     Friend WithEvents t1 As System.Windows.Forms.TextBox
-    Friend WithEvents t2 As System.Windows.Forms.TextBox
     Friend WithEvents t3 As System.Windows.Forms.TextBox
     Friend WithEvents t4 As System.Windows.Forms.TextBox
     Friend WithEvents t8 As System.Windows.Forms.TextBox
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents c5 As System.Windows.Forms.ComboBox
+    Friend WithEvents c2 As System.Windows.Forms.ComboBox
 End Class

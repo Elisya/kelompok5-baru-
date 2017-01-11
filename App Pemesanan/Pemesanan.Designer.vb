@@ -41,11 +41,11 @@ Partial Class formPemesanan
         Me.PemesananBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Kel_5_si_restoDataSet1 = New App_Pemesanan.kel_5_si_restoDataSet()
         Me.meja = New System.Windows.Forms.TextBox()
-        Me.makan = New System.Windows.Forms.TextBox()
         Me.pesan = New System.Windows.Forms.TextBox()
         Me.tambah = New System.Windows.Forms.TextBox()
         Me.PemesananTableAdapter1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.pemesananTableAdapter()
         Me.TableAdapterManager1 = New App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Id_mejaLabel = New System.Windows.Forms.Label()
         Nama_makananLabel = New System.Windows.Forms.Label()
         Jumlah_pesananLabel = New System.Windows.Forms.Label()
@@ -95,6 +95,7 @@ Partial Class formPemesanan
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Tomato
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.Button6)
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.Button4)
@@ -104,7 +105,6 @@ Partial Class formPemesanan
         Me.GroupBox2.Controls.Add(Id_mejaLabel)
         Me.GroupBox2.Controls.Add(Me.meja)
         Me.GroupBox2.Controls.Add(Nama_makananLabel)
-        Me.GroupBox2.Controls.Add(Me.makan)
         Me.GroupBox2.Controls.Add(Jumlah_pesananLabel)
         Me.GroupBox2.Controls.Add(Me.pesan)
         Me.GroupBox2.Controls.Add(Menu_tambahanLabel)
@@ -118,7 +118,7 @@ Partial Class formPemesanan
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(80, 233)
+        Me.Button6.Location = New System.Drawing.Point(80, 282)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(122, 32)
         Me.Button6.TabIndex = 13
@@ -127,7 +127,7 @@ Partial Class formPemesanan
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(141, 196)
+        Me.Button5.Location = New System.Drawing.Point(141, 245)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(127, 31)
         Me.Button5.TabIndex = 12
@@ -136,7 +136,7 @@ Partial Class formPemesanan
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(141, 155)
+        Me.Button4.Location = New System.Drawing.Point(141, 204)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(127, 35)
         Me.Button4.TabIndex = 11
@@ -145,7 +145,7 @@ Partial Class formPemesanan
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(13, 196)
+        Me.Button3.Location = New System.Drawing.Point(13, 245)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(127, 31)
         Me.Button3.TabIndex = 10
@@ -154,7 +154,7 @@ Partial Class formPemesanan
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(13, 155)
+        Me.Button2.Location = New System.Drawing.Point(13, 204)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(127, 35)
         Me.Button2.TabIndex = 9
@@ -211,23 +211,15 @@ Partial Class formPemesanan
         Me.meja.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "id_meja", True))
         Me.meja.Location = New System.Drawing.Point(102, 36)
         Me.meja.Name = "meja"
-        Me.meja.Size = New System.Drawing.Size(100, 20)
+        Me.meja.Size = New System.Drawing.Size(190, 20)
         Me.meja.TabIndex = 1
-        '
-        'makan
-        '
-        Me.makan.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "nama_makanan", True))
-        Me.makan.Location = New System.Drawing.Point(102, 62)
-        Me.makan.Name = "makan"
-        Me.makan.Size = New System.Drawing.Size(190, 20)
-        Me.makan.TabIndex = 3
         '
         'pesan
         '
         Me.pesan.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PemesananBindingSource1, "jumlah_pesanan", True))
         Me.pesan.Location = New System.Drawing.Point(102, 88)
         Me.pesan.Name = "pesan"
-        Me.pesan.Size = New System.Drawing.Size(100, 20)
+        Me.pesan.Size = New System.Drawing.Size(190, 20)
         Me.pesan.TabIndex = 5
         '
         'tambah
@@ -250,6 +242,13 @@ Partial Class formPemesanan
         Me.TableAdapterManager1.pelayanTableAdapter = Nothing
         Me.TableAdapterManager1.pemesananTableAdapter = Me.PemesananTableAdapter1
         Me.TableAdapterManager1.UpdateOrder = App_Pemesanan.kel_5_si_restoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(102, 61)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(190, 20)
+        Me.TextBox1.TabIndex = 14
         '
         'formPemesanan
         '
@@ -286,7 +285,6 @@ Partial Class formPemesanan
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents meja As System.Windows.Forms.TextBox
-    Friend WithEvents makan As System.Windows.Forms.TextBox
     Friend WithEvents pesan As System.Windows.Forms.TextBox
     Friend WithEvents tambah As System.Windows.Forms.TextBox
     Friend WithEvents Button6 As System.Windows.Forms.Button
@@ -294,4 +292,5 @@ Partial Class formPemesanan
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 End Class
